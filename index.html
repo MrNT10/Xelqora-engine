@@ -4,17 +4,123 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#070c11">
-  <meta name="description" content="Xelqora Engine — an independent engine project. Explore real-time browser graphics, physics experiments, development progress and source code.">
-  <meta property="og:title" content="Xelqora Engine | Experimental engine technology">
-  <meta property="og:description" content="Explore the Xelqora graphics lab, browser physics experiments and the C++20 development roadmap.">
-  <title>Xelqora Engine — Open by Design. Powerful by Nature.</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/site.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-  <script src="assets/fsr1-webgl2.js" defer></script>
-  <script src="assets/app.js" defer></script>
+  <meta name="description" content="Xelqora Engine is a community-focused project started by MrNT10 and built with Claude and GPT-6. Try browser graphics experiments and explore the code.">
+  <meta property="og:title" content="Xelqora Engine | A community project for curious builders">
+  <meta property="og:description" content="Made with Claude and GPT-6, Xelqora is an experimental community engine project. Play with the browser labs and follow development.">
+  <title>Xelqora Engine — Made to Explore, Built in the Open</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27x%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%239df6cc%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2368bdf0%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%27M32%203%2056%2017v30L32%2061%208%2047V17Z%27%20fill%3D%27%23102124%27%20stroke%3D%27url%28%23x%29%27%20stroke-width%3D%273%27%2F%3E%3Cpath%20d%3D%27M19%2020l13%2012%2013-12M19%2044l13-12%2013%2012%27%20fill%3D%27none%27%20stroke%3D%27url%28%23x%29%27%20stroke-width%3D%274.5%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E" type="image/svg+xml">
+  <style>
+:root{--bg:#070b0e;--bg2:#0b1217;--surface:#0e171b;--surface2:#132026;--line:#26353a;--line2:#1b292e;--ink:#eef5f2;--ink2:#b4c5c5;--muted:#829798;--accent:#9df6cc;--accent2:#60d1bd;--sky:#7cb8e4;--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;--sans:'DM Sans',Inter,system-ui,-apple-system,sans-serif;--display:'Space Grotesk',Inter,system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-width:320px}body::before{content:"";position:fixed;inset:-30% -20% auto;height:700px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 70% 10%,rgba(56,114,111,.11),transparent 54%)}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}::selection{background:#70d7af;color:#07120e}:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.shell{max-width:1336px;padding-left:clamp(23px,5vw,70px);padding-right:clamp(23px,5vw,70px);margin-inline:auto}.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");mix-blend-mode:screen}.skip-link{position:absolute;left:12px;top:-80px;z-index:99;background:var(--accent);color:#081510;padding:12px}.skip-link:focus{top:12px}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(7,12,15,.9);border-bottom:1px solid rgba(120,166,160,.17);backdrop-filter:blur(20px)}.nav-shell{height:88px;display:flex;align-items:center;gap:44px}.brand{display:flex;align-items:center;gap:12px;flex:none}.logo{height:42px;width:42px;filter:drop-shadow(0 0 19px #74edb83a)}.brand-wordmark{display:flex;flex-direction:column;gap:3px;line-height:1}.brand-wordmark b{font-size:20px;letter-spacing:.075em;font-weight:800}.brand-wordmark small{font:600 9px var(--mono);letter-spacing:.17em;color:var(--accent2)}.nav-links{display:flex;align-items:stretch;gap:5px;margin-left:auto;height:100%}.nav-link{display:flex;align-items:center;padding:0 14px;position:relative;color:#a9b8b8;font-size:12px;font-weight:700;transition:color .2s}.nav-link::after{content:"";height:2px;position:absolute;left:14px;right:14px;bottom:-1px;transform:scaleX(0);background:var(--accent);transition:transform .2s}.nav-link:hover,.nav-link.active{color:var(--ink)}.nav-link.active::after{transform:scaleX(1)}.header-cta{flex:none}.menu-toggle{display:none;border:1px solid var(--line);background:var(--surface);width:43px;height:42px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border-radius:8px}.menu-toggle span{height:2px;width:17px;background:var(--ink)}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:17px;border-radius:6px;border:1px solid transparent;padding:16px 22px;font-weight:800;font-size:13px;letter-spacing:-.01em;transition:transform .18s,background .18s,border-color .18s,box-shadow .18s;text-align:center;min-height:51px;white-space:nowrap}.button span{font-size:17px;font-weight:500}.button:hover{transform:translateY(-2px)}.button-bright{color:#0a1d18;background:var(--accent);box-shadow:0 0 36px rgba(96,235,182,.11)}.button-bright:hover{background:#c2ffe0;box-shadow:0 0 40px rgba(96,235,182,.18)}.button-outline{background:#ffffff03;color:var(--ink);border-color:#415256}.button-outline:hover{background:#ffffff0a;border-color:#9bc5b6}.button-small{min-height:39px;padding:10px 15px;font-size:11px}.top-status{background:#0d181c;border-bottom:1px solid rgba(95,167,143,.14)}.top-status-inner{height:37px;display:flex;align-items:center;gap:14px;font:600 10px var(--mono);letter-spacing:.07em;color:#90a8a6}.top-status .led,.tiny-led{display:inline-block;width:6px;height:6px;border-radius:50%;background:#91f8b8;box-shadow:0 0 12px #7af0ad9c;vertical-align:middle}.top-status i{height:13px;border-left:1px solid #3e4b4e}.top-status-right{margin-left:auto;color:#6d8585}.noscript{background:#263d39;padding:1em;text-align:center}.page[hidden],.lab-panel[hidden]{display:none!important}
+.home-hero{min-height:640px;display:grid;grid-template-columns:1.01fr .99fr;align-items:stretch;gap:clamp(28px,4vw,60px);padding-top:66px;padding-bottom:90px}.home-copy{display:flex;flex-direction:column;justify-content:center;padding-bottom:12px;min-width:0}.eyebrow{display:flex;align-items:center;gap:11px;text-transform:uppercase;font:700 10px var(--mono);letter-spacing:.155em;color:var(--accent2)}.eyebrow-line{display:block;width:28px;height:1px;background:var(--accent)}.eyebrow-counter{color:#6f9290}.home-hero h1,.page-head h1{font-family:var(--display);font-size:clamp(48px,5.6vw,86px);letter-spacing:-.075em;line-height:.99;font-weight:700;margin:27px 0 27px}.home-hero h1 em,.page-head h1 em{font-style:normal;color:var(--accent);text-shadow:0 0 55px rgba(105,227,180,.10)}.home-hero h1 em{font-size:.79em;letter-spacing:-.065em}.hero-desc{max-width:470px;font-size:16px;line-height:1.8;color:#a4b8b7;margin:0}.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:35px}.hero-metadata{display:flex;gap:0;border-top:1px solid #25383b;margin-top:58px;padding-top:21px;max-width:490px}.hero-metadata div{display:flex;align-items:center;gap:9px;padding:0 18px;border-right:1px solid #2b393c}.hero-metadata div:first-child{padding-left:0}.hero-metadata div:last-child{border:0;padding-right:0}.hero-metadata b{font:500 14px var(--mono);color:var(--accent)}.hero-metadata small{font:700 9px var(--mono);color:#8ba4a3;white-space:nowrap}
+.hero-visual{position:relative;isolation:isolate;min-height:490px;overflow:hidden;border:1px solid #314c4a;border-radius:12px;background:radial-gradient(ellipse at 50% 51%,#244d48 0%,#142c2e 27%,#101f23 50%,#0a1318 77%),#0b161b;box-shadow:inset 0 0 100px #0007,0 20px 80px #0003}.hero-visual::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 49.8%,#b4ffdb13 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#b4ffdb12 50%,transparent 50.2%);opacity:.8}.hero-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#07101450,transparent 18%,transparent 78%,#07101450),linear-gradient(0deg,#071014bd,transparent 21%,transparent 76%,#071014ae)}.visual-top,.visual-bottom{position:absolute;z-index:7;display:flex;align-items:center;justify-content:space-between;left:23px;right:23px;font:700 10px var(--mono);letter-spacing:.09em;color:#b3d3cb}.visual-top{top:22px}.visual-top>span:first-child{display:flex;align-items:center;gap:9px}.visual-top>span:last-child{color:#789b98}.visual-bottom{bottom:22px;align-items:end}.visual-bottom>div:first-child{display:flex;flex-direction:column;gap:7px}.visual-bottom small{color:#78a69c;font:600 10px var(--mono)}.visual-bottom b{font:700 12px var(--mono);letter-spacing:.04em}.visual-watermark{position:absolute;top:53px;right:25px;color:#ffffff12;font:700 50px var(--display);z-index:2}.art-perspective{position:absolute;inset:0;perspective:800px;overflow:hidden}.art-grid{position:absolute;inset:42% -80% -65%;transform:rotateX(66deg);transform-origin:center 29%;background-image:linear-gradient(#79e7c522 1px,transparent 1px),linear-gradient(90deg,#79e7c522 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(0deg,transparent 5%,#000 70%);opacity:.7}.art-perspective::before{content:"";position:absolute;width:70%;aspect-ratio:1;left:16%;top:15%;border:1px solid #b6f8d314;border-radius:50%;box-shadow:0 0 0 40px #a9ecd608,0 0 0 89px #a9ecd606}.art-perspective::after{content:"";position:absolute;top:13%;left:13%;width:74%;height:75%;background:radial-gradient(ellipse at center,#72ffc03a 0,transparent 63%);filter:blur(45px)}.core-shape{position:absolute;left:50%;top:46%;z-index:4;width:clamp(195px,23vw,310px);height:clamp(195px,23vw,310px);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 27% 22%,#dcffe6 0%,#afe4c4 8%,#71bf9f 17%,#3d977e 31%,#1b574f 55%,#0c292e 72%,#06131a 90%);box-shadow:inset -29px -28px 60px #001a239c,inset 10px 8px 28px #b4ffda55,0 0 45px #70f1b333,0 30px 50px #0008}.core-shape::before{content:"";position:absolute;inset:5%;border-radius:50%;border:1px solid #d7ffe341;background:repeating-linear-gradient(17deg,transparent 0 15px,#b6ffe70a 16px 17px,transparent 18px 27px);mask-image:radial-gradient(circle,#000 30%,transparent 85%)}.core-shape::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 36% 19%,#ffffffaa 0%,#bdfff36b 1.5%,transparent 12%)}.core-inner{position:absolute;inset:17%;border-radius:50%;border:1px solid #c5ffcc46;box-shadow:0 0 0 12px #8adacb08,0 0 0 25px #8adacb08,0 0 0 38px #8adacb06}.orbital{position:absolute;z-index:5;left:50%;top:46%;width:78%;height:39%;border:1px solid #b3ffe393;border-radius:50%;box-shadow:0 0 15px #7ef2ca1a;transform:translate(-50%,-50%) rotate(-27deg)}.orbital-2{height:63%;width:63%;transform:translate(-50%,-50%) rotate(63deg);opacity:.55}.orbital-3{width:88%;height:22%;transform:translate(-50%,-50%) rotate(28deg);opacity:.3}.halo{position:absolute;z-index:2;left:50%;top:74%;width:65%;height:12%;border-radius:50%;background:#1d8c6f50;filter:blur(28px);transform:translateX(-50%)}.index-bars{display:flex;align-items:flex-end;gap:3px;height:30px}.index-bars span{width:4px;background:#71e5ad;opacity:.65;border-radius:1px}.index-bars span:nth-child(1){height:14px}.index-bars span:nth-child(2){height:26px}.index-bars span:nth-child(3){height:18px}.index-bars span:nth-child(4){height:30px}.index-bars span:nth-child(5){height:11px}.index-bars span:nth-child(6){height:22px}.index-bars span:nth-child(7){height:15px}
+.section-divider{height:1px;background:linear-gradient(90deg,#497d6e,transparent)}.section-intro{display:flex;align-items:end;justify-content:space-between;gap:28px;padding:71px 0 31px}.section-intro h2,.home-callout h2,.tech-feature h2,.about-statement h2{font-family:var(--display);font-size:clamp(30px,3.7vw,48px);letter-spacing:-.057em;line-height:1.13;margin:16px 0 0}.subtle{color:#78928e}.section-intro p{font-size:14px;line-height:1.8;max-width:410px;color:var(--muted);margin:0 0 5px}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.feature-tile{display:flex;flex-direction:column;min-height:277px;border:1px solid #27383d;background:linear-gradient(145deg,#15242a,#0c1419 76%);border-radius:8px;padding:26px 27px;transition:transform .2s,border-color .2s,background .2s}.feature-tile:hover{transform:translateY(-4px);border-color:#65a393}.feature-tile.tile-visual{background:linear-gradient(145deg,#20483e,#102321 65%,#0c181a)}.tile-meta,.tech-number{font:700 10px var(--mono);letter-spacing:.06em;color:#89aca5}.tile-icon{font-size:36px;font-weight:400;margin-top:24px;color:var(--accent)}.feature-tile h3{font:700 22px var(--display);letter-spacing:-.035em;margin:15px 0 8px}.feature-tile p{color:#9cb0af;font-size:13px;line-height:1.7;margin:0;max-width:300px}.tile-link{font-size:12px;font-weight:800;color:var(--accent);margin-top:auto;padding-top:20px;display:flex;justify-content:space-between}.tile-link span{font-size:18px}.home-callout{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:110px;margin-bottom:110px}.home-callout h2{font-size:clamp(26px,3.1vw,41px)}.home-callout .button{margin-top:18px}
+.page-head{padding-top:90px;padding-bottom:67px}.page-headline{display:flex;align-items:end;justify-content:space-between;gap:40px}.page-head h1{font-size:clamp(46px,6vw,88px);margin-bottom:0}.page-headline p{color:var(--ink2);font-size:15px;line-height:1.75;max-width:420px;margin:0 0 6px}.subtabs{display:flex;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}.subtab{border:1px solid transparent;border-radius:5px;padding:12px 17px;background:transparent;color:#91aaa9;font-size:12px;font-weight:800}.subtab:hover,.subtab.active{background:#1c3531;color:var(--accent);border-color:#416359}.lab-main-grid{display:grid;grid-template-columns:minmax(0,1.63fr) minmax(300px,.83fr);gap:18px}.lab-render-frame{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0a1217}.lab-topline,.lab-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:16px 19px;background:#0e1a1e;font:700 10px var(--mono);letter-spacing:.055em;color:#95b4ac}.lab-topline .tiny-led{margin-right:8px}.lab-bottom{background:#0c151a;color:#6e9893}.render-viewport,.physics-viewport{position:relative;min-height:425px;background:radial-gradient(ellipse at center,#285c56 0%,#132b34 42%,#09121c 90%)}.render-viewport canvas,.physics-viewport canvas{position:absolute;inset:0;display:block;width:100%;height:100%;touch-action:none}.render-loading{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:30px;font-size:13px;color:#c7e3d6}.render-label{position:absolute;bottom:20px;font:700 10px var(--mono);letter-spacing:.08em;text-shadow:0 1px 8px #000;pointer-events:none}.render-label.left{left:16px}.render-label.right{right:16px}.render-centerline{position:absolute;left:50%;top:0;bottom:0;border-left:1px solid #d3fff8cc;pointer-events:none}.render-centerline span{position:absolute;top:50%;left:-15px;background:#c0ffdb;color:#082019;border-radius:50%;height:30px;width:30px;display:grid;place-items:center}.physics-hint{position:absolute;left:12px;bottom:16px;background:#061017c9;color:#b2cfca;padding:8px 11px;border-radius:4px;font-size:11px;pointer-events:none}.lab-controls{background:#111f23;border:1px solid #2a3d41;border-radius:8px;padding:30px;min-width:0}.lab-controls h2,.diagnostics-layout h2{font:700 clamp(28px,3vw,41px)/1.12 var(--display);letter-spacing:-.05em;margin:15px 0}.lab-controls>p,.diagnostics-layout p{color:#9fb7b3;line-height:1.7;font-size:13px;margin:0 0 25px}.control{margin-top:21px}.control label,.control-head{font-weight:700;font-size:12px;color:#d2e4de}.control-head{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.control-head output{color:var(--accent);font:700 11px var(--mono)}.control select{display:block;width:100%;margin-top:10px;appearance:none;cursor:pointer;color:var(--ink);border:1px solid #3d5559;border-radius:5px;padding:12px 31px 12px 12px;background:#0b161b url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%239df6cc' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center;font-size:12px}.control input[type=range]{width:100%;accent-color:var(--accent);margin:8px 0 0}.control-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.minor-note{margin-top:24px;padding-top:18px;border-top:1px solid #304749;color:#87a09b;font-size:11px;line-height:1.7}.minor-note b{color:#c3d9d0}.minor-note a{color:var(--accent);text-decoration:underline}.footnote-strip,.roadmap-foot,.licence-strip{color:#9eb0af;font-size:12px;line-height:1.7;border-top:1px solid #304145;padding:23px 0;margin-top:28px;margin-bottom:100px}.footnote-strip b,.roadmap-foot b,.licence-strip b{color:var(--ink)}.diagnostics-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;background:#101c21;border:1px solid var(--line);border-radius:9px;padding:48px}.diagnostics-layout .button{margin-top:10px}.diag-box{border:1px solid #32504e;background:#09151a;border-radius:5px;min-height:290px;overflow:hidden}.diag-top{display:flex;justify-content:space-between;padding:17px 19px;border-bottom:1px solid #2c4143;font:700 10px var(--mono);color:var(--accent)}.diag-placeholder{color:var(--muted);font:12px var(--mono);padding:25px}.diag-box #diag-results{padding:0 18px}.diag-box #diag-results>*{line-height:1.5}
+.tech-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,112px);padding-bottom:120px}.tech-feature{min-width:0}.tech-graphic{height:320px;border:1px solid #2c4c44;border-radius:8px;margin:19px 0 33px;display:grid;place-items:center;overflow:hidden;position:relative;background:radial-gradient(circle at center,#1a443d,#0b191e 70%)}.tech-graphic::after{content:"";position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(0deg,transparent 0 29px,#89d6b811 30px),repeating-linear-gradient(90deg,transparent 0 29px,#89d6b811 30px);mask-image:radial-gradient(circle,#000,transparent 80%)}.tech-graphic-inner{position:relative;z-index:2;font:700 clamp(50px,6vw,82px) var(--display);letter-spacing:-.08em;text-shadow:0 0 45px #77eeba5b}.tech-graphic-inner span{color:var(--accent)}.tech-graphic-lines{position:absolute;width:420px;height:420px;border:1px solid #83d6b633;border-radius:50%;box-shadow:0 0 0 52px #83d6b60d,0 0 0 110px #83d6b608}.tech-feature>h2{font-size:37px}.tech-feature>p{line-height:1.8;font-size:14px;color:var(--ink2);max-width:470px}.text-link{display:inline-flex;gap:18px;align-items:center;margin-top:18px;font-size:12px;font-weight:800;color:var(--accent)}.text-link span{font-size:18px}.tech-list{border-top:1px solid var(--line)}.tech-list article{display:grid;grid-template-columns:38px 1fr;gap:15px;padding:23px 0;border-bottom:1px solid var(--line)}.tech-list article>span{font:700 12px var(--mono);color:var(--accent)}.tech-list h3{font:700 19px var(--display);letter-spacing:-.03em;margin:0 0 8px}.tech-list h3 small{margin-left:7px;color:#74b99f;font:600 9px var(--mono);letter-spacing:.04em}.tech-list p{font-size:12px;line-height:1.7;margin:0;color:#99aca9}.roadmap-board{border-top:1px solid #4d7368}.roadmap-row{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;padding:29px 0;border-bottom:1px solid #314143}.roadmap-step{font:700 30px var(--display);color:#709d8b}.roadmap-row h3{font:700 23px var(--display);letter-spacing:-.03em;margin:0 0 6px}.roadmap-row p{font-size:13px;color:var(--muted);margin:0}.roadmap-state,.availability{border:1px solid #44655d;border-radius:3px;padding:8px 10px;color:var(--accent);font:700 10px var(--mono);letter-spacing:.06em;white-space:nowrap}.roadmap-foot{margin-top:35px}.downloads-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.download-panel{display:flex;flex-direction:column;min-height:352px;padding:29px;border:1px solid #304347;border-radius:8px;background:#101c20;align-items:flex-start}.download-panel.featured{background:linear-gradient(150deg,#214d3e,#112724 68%,#111d20);border-color:#41705b}.download-type{font:700 10px var(--mono);color:#9acbb6;letter-spacing:.09em}.download-symbol{font-size:65px;color:var(--accent);margin-top:27px;line-height:1}.download-panel h2{font:700 27px var(--display);letter-spacing:-.04em;margin:30px 0 10px}.download-panel p{color:#9db1ad;line-height:1.7;font-size:13px;margin:0 0 25px}.download-panel .button,.download-panel .text-link{margin-top:auto}.download-panel .availability{margin-top:42px}.licence-strip{margin-bottom:90px}.licence-strip p{margin:5px 0}.licence-strip code{color:var(--accent)}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(38px,8vw,125px);padding-bottom:90px}.about-statement h2{margin:25px 0}.about-statement p{font-size:15px;line-height:1.8;color:var(--ink2)}.about-action{margin-top:30px}.about-facts{border-top:1px solid #37534c}.about-facts>div{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:23px 0;border-bottom:1px solid #2b3b3e}.about-facts span{font:700 10px var(--mono);color:#8ba5a1;white-space:nowrap}.about-facts b{text-align:right;font-size:13px;font-weight:700}.contact-panel{display:flex;justify-content:space-between;align-items:center;gap:32px;margin-bottom:100px}.contact-panel h2{font:700 36px var(--display);letter-spacing:-.05em;margin:12px 0}.contact-panel p{font-size:13px;color:var(--muted);max-width:530px}.site-footer{border-top:1px solid #2e4545;background:#0a1115}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-top:62px;padding-bottom:64px}.footer-brand{font:800 22px var(--display);letter-spacing:.04em}.footer-brand span{color:var(--accent)}.footer-grid p{color:var(--muted);font-size:12px;line-height:1.8}.footer-links{display:flex;flex-direction:column;gap:12px}.footer-links span{font:700 10px var(--mono);color:#72a699;margin-bottom:6px;letter-spacing:.1em}.footer-links a{font-size:13px;color:#b4c4be}.footer-links a:hover{color:var(--accent)}.footer-bottom{display:flex;gap:20px;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:24px;border-top:1px solid #27363a;color:#6a8481;font:600 9px var(--mono);letter-spacing:.06em}
+@media(max-width:1150px){.nav-shell{gap:18px}.nav-link{padding-inline:10px}.nav-link::after{left:10px;right:10px}.home-hero h1{font-size:clamp(47px,5.5vw,74px)}.hero-metadata{gap:10px}.hero-metadata div{padding:0 9px}.hero-metadata small{font-size:8px}}@media(max-width:890px){.nav-shell{height:73px}.nav-links{display:none;position:absolute;left:0;right:0;top:72px;height:auto;padding:15px 24px 22px;flex-direction:column;background:#0a1215;border-bottom:1px solid var(--line);box-shadow:0 18px 35px #0008}.nav-links.open{display:flex}.nav-link{padding:13px 16px}.nav-link::after{display:none}.nav-link.active{background:#1a312a;border-radius:4px;color:var(--accent)}.header-cta{margin-left:auto}.menu-toggle{display:flex}.home-hero{grid-template-columns:1fr;padding-top:58px;padding-bottom:74px;min-height:unset}.hero-visual{min-height:500px}.section-intro{align-items:start}.lab-main-grid{grid-template-columns:1fr}.lab-controls{display:block}.tech-layout{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.page-headline{align-items:start;flex-direction:column;gap:24px}.page-head{padding-top:65px;padding-bottom:40px}.page-head h1{margin-top:25px}.downloads-grid{grid-template-columns:1fr 1fr}.download-panel.featured{grid-column:1/-1;min-height:280px}.diagnostics-layout{grid-template-columns:1fr}.home-callout{margin-top:80px;margin-bottom:85px}}@media(max-width:610px){.shell{padding-inline:20px}.header-cta{display:none}.menu-toggle{margin-left:auto}.top-status-inner{gap:10px;font-size:8px}.top-status-right{display:none}.home-hero{padding-top:45px;gap:35px}.home-hero h1{font-size:clamp(45px,11.5vw,71px);margin:24px 0}.home-hero h1 em{font-size:.74em}.hero-desc{font-size:14px}.hero-actions{align-items:stretch}.hero-actions .button{width:100%}.hero-metadata{margin-top:35px}.hero-metadata div{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding-inline:10px;flex:1}.hero-metadata div:first-child{padding-left:0}.hero-visual{min-height:365px}.core-shape{width:210px;height:210px}.section-intro{flex-direction:column;gap:15px;padding-top:52px}.feature-grid{grid-template-columns:1fr}.feature-tile{min-height:226px}.tile-icon{margin-top:14px}.home-callout,.contact-panel{display:block}.home-callout .button,.contact-panel .button{margin-top:26px}.page-head h1{font-size:clamp(43px,10vw,66px)}.page-headline p{font-size:14px}.lab-controls{padding:22px}.render-viewport,.physics-viewport{min-height:305px}.lab-topline,.lab-bottom{font-size:8px;padding:12px}.render-label{font-size:8px}.diagnostics-layout{padding:24px}.tech-graphic{height:260px}.roadmap-row{grid-template-columns:45px 1fr;gap:12px}.roadmap-step{font-size:23px}.roadmap-row h3{font-size:19px}.roadmap-state{grid-column:2;width:max-content}.downloads-grid{grid-template-columns:1fr}.download-panel.featured{grid-column:auto}.about-facts>div{align-items:flex-start;flex-direction:column;gap:8px}.about-facts b{text-align:left}.footer-grid{grid-template-columns:1fr 1fr;gap:40px 20px}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column;align-items:flex-start}.section-intro h2{font-size:34px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Xelqora 2.1 finishing pass: legibility, keyboard focus, presentation and mobile refinements. */
+html{scroll-padding-top:94px}
+body{overflow-x:hidden}
+.noise{opacity:.055}
+.site-header{isolation:isolate}
+.site-header .nav-link:focus-visible,.brand:focus-visible{border-radius:5px}
+.button:active,.feature-tile:active{transform:translateY(0)}
+.hero-desc{max-width:54ch}
+.hero-visual{box-shadow:0 30px 90px rgba(0,0,0,.20)}
+.hero-visual::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 100px #0005}
+.feature-tile:focus-visible{border-color:var(--accent)}
+.project-snapshot{margin-top:96px;padding-bottom:4px}
+.snapshot-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;padding:0 0 30px}
+.snapshot-head h2{font-size:clamp(31px,3.7vw,50px);line-height:1.07;margin:16px 0 0;font-family:var(--display);letter-spacing:-.065em}
+.snapshot-head p{max-width:390px;font-size:13px;line-height:1.8;color:var(--ink2)}
+.snapshot-board{border:1px solid #34504b;border-radius:9px;overflow:hidden;background:linear-gradient(120deg,#10241f,#0c151a 56%,#102021)}
+.snapshot-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:1px solid #34504b;color:#90cbb3;font:700 10px var(--mono);letter-spacing:.08em}
+.snapshot-toolbar .tiny-led{margin-right:10px}
+.snapshot-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.snapshot-item{padding:29px 26px 30px;border-right:1px solid #34504b;position:relative}
+.snapshot-item:last-child{border-right:0}
+.snapshot-item .snapshot-num{display:block;color:#7baca0;font:700 11px var(--mono);margin-bottom:36px}
+.snapshot-item h3{font:700 22px var(--display);letter-spacing:-.04em;margin:0 0 8px}
+.snapshot-item p{color:#9eafac;line-height:1.7;font-size:12px;max-width:34ch}
+.snapshot-status{display:inline-flex;gap:8px;align-items:center;margin-bottom:20px;border:1px solid #417365;color:#b5f5d2;padding:7px 9px;border-radius:3px;font:700 10px var(--mono)}
+.snapshot-item:nth-child(2) .snapshot-status{border-color:#466d80;color:#b5e4ff}
+.snapshot-item:nth-child(3) .snapshot-status{border-color:#565a61;color:#c4c9c9}
+.snapshot-foot{padding:15px 20px;color:#82a39b;font:600 10px/1.7 var(--mono);border-top:1px solid #34504b}
+.snapshot-foot a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.page-head,.section-intro,.home-callout{position:relative}
+.render-viewport{isolation:isolate}
+.render-centerline{z-index:4}
+.render-loading{z-index:5}
+.render-label{z-index:3}
+input[type=range]{touch-action:pan-y}
+.diag-row{display:grid;grid-template-columns:1fr auto;gap:15px;padding:13px 0;border-bottom:1px solid #29423e;font:600 11px var(--mono)}
+.diag-row span{color:#a4b9b3}.diag-row b{color:#abf1cc;text-align:right}.diag-row b.warn{color:#ffd19a}
+#diag-results{padding-bottom:10px!important}
+@media(max-width:890px){.snapshot-head{display:block}.snapshot-head p{margin-top:15px}.snapshot-items{grid-template-columns:1fr}.snapshot-item{padding:24px;border-right:0;border-bottom:1px solid #34504b}.snapshot-item:last-child{border-bottom:0}.snapshot-item .snapshot-num{margin-bottom:14px}.project-snapshot{margin-top:72px}}
+@media(max-width:610px){.snapshot-head h2{font-size:36px}.snapshot-toolbar{font-size:9px}.hero-visual{box-shadow:none}.diag-row{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero-visual{scroll-behavior:auto}}
+
+
+/* === Community-first design details: friendly, accessible, and a little playful === */
+:root{--accent:#9bf6c7;--accent2:#60d1bd;--sky:#9bafe9;--soft-purple:#c2b5ff}
+.brand-wordmark small{letter-spacing:.15em!important;color:#9af5cc}
+.site-header{background:rgba(6,12,15,.92)}
+.top-status{background:#101c1c}
+.home-hero{position:relative}
+.home-copy h1{letter-spacing:-.074em;font-size:clamp(53px,5.65vw,86px)!important;line-height:1.02}
+.home-copy h1 em{color:#9cf2cb}
+.hero-desc{font-size:15px;line-height:1.83;max-width:51ch}
+.home-copy .eyebrow{display:inline-flex;align-items:center;flex-wrap:wrap;gap:3px;color:#b9f6d7}
+.hero-actions .button{border-radius:13px}
+.button{border-radius:12px}
+.button-bright{box-shadow:0 9px 30px #4be3af16}
+.hero-metadata{gap:20px}
+.hero-metadata div{min-width:0}
+.hero-metadata small{font-size:9px;letter-spacing:.04em;white-space:normal}
+.hero-visual,.feature-tile,.tech-feature,.download-panel,.lab-render-frame,.lab-controls,.diag-box,.roadmap-board,.roadmap-foot,.snapshot-board,.contact-panel{border-radius:14px;overflow:hidden}
+.hero-visual{background:radial-gradient(ellipse at 55% 44%,#25433e 0%,#102727 43%,#081318 85%)}
+.visual-watermark{opacity:.7}
+.feature-tile{transition:transform .25s ease, border-color .25s ease, background .25s ease}
+.feature-tile:hover{transform:translateY(-5px)}
+.feature-grid.three{gap:16px}
+.feature-tile:nth-child(2){background:radial-gradient(circle at 85% 10%,#45436e44,transparent 55%),#101b22}
+.feature-tile:nth-child(3){background:radial-gradient(circle at 80% 10%,#24546e46,transparent 54%),#0c1920}
+.snapshot-board{background:linear-gradient(115deg,#122621,#10191f)}
+.snapshot-item{transition:background .2s}
+.snapshot-item:hover{background:#b3ffd808}
+.home-callout{align-items:center;gap:30px;border-top:1px solid #2b423a;padding-top:54px}
+.community-note{max-width:680px;font-size:14px;line-height:1.8;color:var(--ink2);margin-top:18px}
+.community-note strong{color:var(--accent)}
+.page-head h1{font-size:clamp(56px,7vw,92px)}
+.about-credits{margin-top:21px;border-left:3px solid var(--accent);padding:9px 0 9px 20px;color:#c0d0cc!important}
+.about-credits b{color:#e7fff1}
+.community-section{margin:0 auto 80px}
+.community-section-head{max-width:650px;margin-bottom:27px}
+.community-section-head h2{font-size:clamp(30px,3.6vw,49px);margin:11px 0 14px;letter-spacing:-.055em}
+.community-section-head p{font-size:14px;color:var(--ink2)}
+.community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.community-card{border:1px solid #2b4642;background:#101e20;border-radius:14px;padding:28px;min-height:258px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.community-card:hover{transform:translateY(-3px);border-color:#79dfb9}
+.community-card:nth-child(2){background:#171b2b;border-color:#41415c}
+.community-card:nth-child(3){background:#0e1b27;border-color:#2e4558}
+.community-card-symbol{font:700 37px var(--display);color:var(--accent);height:57px}
+.community-card:nth-child(2) .community-card-symbol{color:var(--soft-purple)}
+.community-card:nth-child(3) .community-card-symbol{color:#a5dafa}
+.community-card h3{font:700 23px var(--display);letter-spacing:-.045em;margin-bottom:11px}
+.community-card p{font-size:13px;line-height:1.75;color:#a8bdbb;margin-bottom:18px}
+.community-card a{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #3d5653;padding-top:15px;color:#aaf8d0;font-size:12px;font-weight:700;margin-top:auto}
+.community-card a span{font-size:16px}
+@media(max-width:980px){.home-copy h1{font-size:clamp(45px,5.2vw,68px)!important}}
+@media(max-width:800px){.home-copy h1{font-size:clamp(51px,10vw,76px)!important}.community-grid{grid-template-columns:1fr}.community-card{min-height:210px}.home-callout{display:flex;flex-direction:column;align-items:flex-start}.hero-metadata{flex-wrap:wrap}.top-status-inner{gap:9px}}
+@media(max-width:480px){.home-copy h1{font-size:clamp(40px,10.8vw,55px)!important}.hero-metadata{gap:14px}.hero-metadata small{font-size:8px}.community-note{font-size:13px}.community-section{margin-bottom:58px}}
+
+</style>
+  
+  
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -23,7 +129,7 @@
     <div class="shell nav-shell">
       <a href="#home" class="brand" data-tab-link="home" aria-label="Xelqora home">
         <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#82edd2"/><stop offset="1" stop-color="#55a9f9"/></linearGradient></defs><path d="M32 3 56 17v30L32 61 8 47V17Z" fill="#11202b" stroke="url(#brand-gradient)" stroke-width="2.4"/><path d="m19 20 13 12 13-12M19 44l13-12 13 12" fill="none" stroke="url(#brand-gradient)" stroke-width="5" stroke-linecap="square"/></svg>
-        <span class="brand-wordmark"><b>XELQORA</b><small>ENGINE / LABS</small></span>
+        <span class="brand-wordmark"><b>XELQORA</b><small>COMMUNITY PROJECT</small></span>
       </a>
       <nav class="nav-links" aria-label="Main sections">
         <a class="nav-link active" href="#home" data-tab-link="home">Home</a>
@@ -31,52 +137,728 @@
         <a class="nav-link" href="#technology" data-tab-link="technology">Technology</a>
         <a class="nav-link" href="#roadmap" data-tab-link="roadmap">Roadmap</a>
         <a class="nav-link" href="#downloads" data-tab-link="downloads">Downloads</a>
-        <a class="nav-link" href="#about" data-tab-link="about">About</a>
+        <a class="nav-link" href="#about" data-tab-link="about">Community</a>
       </nav>
-      <a class="button button-small button-bright header-cta" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+      <a class="button button-small button-bright header-cta" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
       <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
-  <div class="top-status"><div class="shell top-status-inner"><span class="led"></span><span>XELQORA Core 2.0</span><i></i><span>EARLY DEVELOPMENT</span><span class="top-status-right">BROWSER LAB // EXPERIMENTAL</span></div></div>
+  <div class="top-status"><div class="shell top-status-inner"><span class="led"></span><span>XELQORA Core 2.0</span><i></i><span>COMMUNITY PROJECT</span><span class="top-status-right">BUILT WITH CLAUDE + GPT-6</span></div></div>
   <noscript><p class="noscript">This site uses JavaScript for navigation and the interactive labs. Please enable it.</p></noscript>
   <main id="main" tabindex="-1">
     <section class="page is-active" id="page-home" data-page="home" aria-labelledby="home-title">
       <div class="shell home-hero">
         <div class="home-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> INDEPENDENT ENGINE DEVELOPMENT <span class="eyebrow-counter">/ 2026</span></div>
-          <h1 id="home-title">BUILD<br>BEYOND<br><em>THE ORDINARY.</em></h1>
-          <p class="hero-desc">A growing engine project exploring modern graphics, efficient runtimes and the tools behind interactive worlds. Developed openly. Tested deliberately.</p>
-          <div class="hero-actions"><a class="button button-bright" href="#playground" data-tab-link="playground">Launch the playground <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#technology" data-tab-link="technology">Explore the technology <span aria-hidden="true">→</span></a></div>
-          <div class="hero-metadata"><div><b>01</b><small>C++20 CORE</small></div><div><b>02</b><small>WEB EXPERIMENTS</small></div><div><b>03</b><small>OPEN ROADMAP</small></div></div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE PROJECT FOR CURIOUS PEOPLE <span class="eyebrow-counter">/ 2026</span></div>
+          <h1 id="home-title">LET’S MAKE<br>COOL STUFF<br><em>TOGETHER.</em></h1>
+          <p class="hero-desc">Xelqora is a community-focused engine experiment started by MrNT10 and built with Claude and GPT-6. Play with graphics, peek at the code, and follow along as the project grows. No corporate polish required.</p>
+          <div class="hero-actions"><a class="button button-bright" href="#playground" data-tab-link="playground">Try the playground <span aria-hidden="true">↗</span></a><a class="button button-outline" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Browse the code <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-metadata"><div><b>01</b><small>FREE TO EXPLORE</small></div><div><b>02</b><small>CLAUDE + GPT-6</small></div><div><b>03</b><small>WORK IN PROGRESS</small></div></div>
         </div>
         <div class="hero-visual" aria-label="Illustrated Xelqora engine concept artwork">
-          <div class="visual-top"><span><span class="tiny-led"></span> XELQORA / VISUAL RESEARCH</span><span>PREVIEW 001</span></div>
+          <div class="visual-top"><span><span class="tiny-led"></span> XELQORA / CREATIVE PLAYGROUND</span><span>PREVIEW 001</span></div>
           <div class="art-perspective"><div class="art-grid"></div><div class="orbital orbital-1"></div><div class="orbital orbital-2"></div><div class="orbital orbital-3"></div><div class="core-shape"><div class="core-inner"></div></div><div class="halo"></div></div>
-          <div class="visual-bottom"><div><small>RENDER SYSTEM</small><b>EXPLORE NEW DIMENSIONS</b></div><div class="index-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="visual-bottom"><div><small>WEB GRAPHICS EXPERIMENT</small><b>MADE TO PLAY WITH</b></div><div class="index-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
           <span class="visual-watermark">X / 01</span>
         </div>
       </div>
-      <div class="shell"><div class="section-divider"></div><div class="section-intro intro-tight"><div><div class="eyebrow">THE PROJECT AT A GLANCE</div><h2>One foundation.<br><span class="subtle">More possibilities.</span></h2></div><p>From a tested headless core to experimental browser visuals, Xelqora is being built one component at a time. Explore what works today and what comes next.</p></div><div class="feature-grid three">
-        <a href="#playground" data-tab-link="playground" class="feature-tile tile-visual"><div class="tile-meta">01 / INTERACTIVE</div><div class="tile-icon">◈</div><h3>Graphics playground</h3><p>Try procedural lighting, reflections and visual controls in your browser.</p><div class="tile-link">Open lab <span>↗</span></div></a>
-        <a href="#technology" data-tab-link="technology" class="feature-tile"><div class="tile-meta">02 / FOUNDATION</div><div class="tile-icon">⌘</div><h3>Core architecture</h3><p>C++20 maths, timing, fixed-step scheduling and application lifecycle.</p><div class="tile-link">Explore core <span>↗</span></div></a>
-        <a href="#roadmap" data-tab-link="roadmap" class="feature-tile"><div class="tile-meta">03 / FORWARD</div><div class="tile-icon">◎</div><h3>Built in the open</h3><p>Follow upcoming development milestones, priorities and technical decisions.</p><div class="tile-link">View roadmap <span>↗</span></div></a>
+      <div class="shell"><div class="section-divider"></div><div class="section-intro intro-tight"><div><div class="eyebrow">THINGS YOU CAN EXPLORE</div><h2>Start small.<br><span class="subtle">Make something awesome.</span></h2></div><p>There’s real code to read, demos to mess around with, and plenty still on the to-do list. Pick something that looks interesting.</p></div><div class="feature-grid three">
+        <a href="#playground" data-tab-link="playground" class="feature-tile tile-visual"><div class="tile-meta">01 / INTERACTIVE</div><div class="tile-icon">◈</div><h3>Play with graphics</h3><p>Change lighting, explore reflections and see what your browser can draw.</p><div class="tile-link">Open lab <span>↗</span></div></a>
+        <a href="#technology" data-tab-link="technology" class="feature-tile"><div class="tile-meta">02 / FOUNDATION</div><div class="tile-icon">⌘</div><h3>Peek at the C++ core</h3><p>See the timing, maths and application systems taking shape under the hood.</p><div class="tile-link">Explore core <span>↗</span></div></a>
+        <a href="#roadmap" data-tab-link="roadmap" class="feature-tile"><div class="tile-meta">03 / FORWARD</div><div class="tile-icon">◎</div><h3>Follow the experiments</h3><p>See what works, what needs fixing and what might be built next.</p><div class="tile-link">View roadmap <span>↗</span></div></a>
       </div></div>
-      <div class="shell home-callout"><div><span class="eyebrow">OPEN BY DESIGN. POWERFUL BY NATURE.</span><h2>Curiosity is our starting point.<br><span class="subtle">Engineering is how we move forward.</span></h2></div><a class="button button-outline" href="#about" data-tab-link="about">Meet the project <span aria-hidden="true">↗</span></a></div>
+
+      <div class="shell project-snapshot" aria-labelledby="snapshot-title">
+        <div class="snapshot-head">
+          <div><div class="eyebrow">WHAT EXISTS RIGHT NOW</div><h2 id="snapshot-title">What works.<br><span class="subtle">What we’re still figuring out.</span></h2></div>
+          <p>No mystery roadmap or inflated feature lists. These are the real prototypes today, plus a few ideas for tomorrow.</p>
+        </div>
+        <div class="snapshot-board">
+          <div class="snapshot-toolbar"><span><span class="tiny-led"></span> XELQORA / PROJECT CHECK-IN</span><span>COME HAVE A LOOK</span></div>
+          <div class="snapshot-items">
+            <article class="snapshot-item"><span class="snapshot-num">SYSTEM 01 / FOUNDATION</span><span class="snapshot-status">PROTOTYPE</span><h3>Native C++20 core</h3><p>Timing, maths, lifecycle and headless scheduler tests.</p></article>
+            <article class="snapshot-item"><span class="snapshot-num">SYSTEM 02 / EXPERIMENTS</span><span class="snapshot-status">BROWSER DEMO</span><h3>Graphics &amp; physics</h3><p>Live JavaScript and WebGL2 demonstrations, including FSR 1.0 spatial upscaling.</p></article>
+            <article class="snapshot-item"><span class="snapshot-num">SYSTEM 03 / FUTURE</span><span class="snapshot-status">RESEARCH</span><h3>Native renderer &amp; tools</h3><p>Platform backends, real-time rendering, content tools and an eventual stable channel.</p></article>
+          </div>
+          <div class="snapshot-foot">FOLLOW THE <a href="#roadmap" data-tab-link="roadmap">PROJECT ROADMAP</a> · BROWSER DEMOS ARE SEPARATE FROM THE NATIVE CORE</div>
+        </div>
+      </div>
+      <div class="shell home-callout"><div><span class="eyebrow">NOT A CORPORATION. JUST A PROJECT WORTH SHARING.</span><h2>Made with curiosity.<br><span class="subtle">And a little help from AI.</span></h2><p class="community-note">Started by <strong>MrNT10</strong>, built with <strong>Claude and GPT-6</strong>, and shared with people who love experimenting. You can explore the source, try the demos, and share ideas.</p></div><a class="button button-outline" href="#about" data-tab-link="about">About the community <span aria-hidden="true">↗</span></a></div>
     </section>
     <section class="page" id="page-playground" data-page="playground" aria-labelledby="playground-title" hidden>
-      <div class="shell page-head"><div class="eyebrow">XELQORA / INTERACTIVE LABS</div><div class="page-headline"><h1 id="playground-title">SEE THE<br><em>ENGINE THINK.</em></h1><p>Run interactive experiments straight from the website. These demos use browser JavaScript and WebGL2; they do not execute the native C++ Core 2.0 binary.</p></div></div>
+      <div class="shell page-head"><div class="eyebrow">XELQORA / INTERACTIVE LABS</div><div class="page-headline"><h1 id="playground-title">EXPLORE THE<br><em>BROWSER LAB.</em></h1><p>Run interactive experiments straight from the website. These demos use browser JavaScript and WebGL2; they do not execute the native C++ Core 2.0 binary.</p></div></div>
       <div class="shell"><div class="subtabs" role="tablist" aria-label="Playground demonstrations"><button class="subtab active" type="button" data-lab="graphics" role="tab" aria-selected="true">01 / Rendering lab</button><button class="subtab" type="button" data-lab="physics" role="tab" aria-selected="false">02 / Physics lab</button><button class="subtab" type="button" data-lab="diagnostics" role="tab" aria-selected="false">03 / Diagnostics</button></div>
-        <div class="lab-panel is-active" data-lab-panel="graphics"><div class="lab-main-grid"><div class="lab-render-frame"><div class="lab-topline"><span><span class="tiny-led"></span> LIVE WEBGL2 / PROCEDURAL RAY MARCHING</span><span id="render-fps">— FPS</span></div><div class="render-viewport" id="render-viewport"><canvas id="render-canvas" aria-label="Interactive procedural 3D rendering comparison"></canvas><div class="render-loading" id="render-loading">Initialising GPU demonstration…</div><div class="render-label left">ENHANCED LIGHTING</div><div class="render-label right">BASIC LIGHTING</div><div class="render-centerline" id="render-centerline"><span>↔</span></div></div><div class="lab-bottom"><span id="render-resolution">WEBGL2 / READY</span><span>DRAG TO ORBIT • SLIDE TO COMPARE</span></div></div><aside class="lab-controls"><div class="eyebrow">GRAPHICS PIPELINE</div><h2>Lighting.<br>Reimagined.</h2><p>Compare procedural ray-marched lighting with a simplified view. The enhanced mode uses additional shadow and reflection rays inside a fragment shader.</p><div class="control"><div class="control-head"><label for="comparison">Lighting comparison</label><output id="comparison-value">50 / 50</output></div><input type="range" id="comparison" min="0" max="100" value="50"></div><div class="control"><label for="scene-select">Environment</label><select id="scene-select"><option value="0">Studio / Chrome</option><option value="1">Aurora / Night</option><option value="2">Monolith / Ambient</option></select></div><div class="control"><label for="quality-select">Render scale</label><select id="quality-select"><option value="0.5">FSR 2.0x (50%)</option><option value="0.59">FSR 1.7x (59%)</option><option value="0.67">FSR 1.5x (67%)</option><option value="0.77">FSR 1.3x (77%)</option><option value="0.85" selected>Balanced (85%)</option><option value="1">Native (100%)</option></select></div><div class="control"><label for="upscaler-select">Upscaler</label><select id="upscaler-select"><option value="bilinear">Bilinear (no upscaler)</option><option value="fsr" selected>AMD FSR 1.0 (EASU + RCAS)</option></select></div><div class="control"><div class="control-head"><label for="sharpness">FSR sharpness</label><output id="sharpness-value" for="sharpness">0.50 stops</output></div><input type="range" id="sharpness" min="0" max="100" value="75"></div><div class="control-actions"><button class="button button-outline button-small" id="render-pause" type="button">Pause</button><button class="button button-outline button-small" id="render-reset" type="button">Reset camera</button></div><div class="minor-note"><b>Research demo, not product benchmark.</b> Shader calculations run on the visitor's GPU through WebGL2. Performance varies by browser and hardware; hardware RTX acceleration is not claimed. AMD FSR 1.0 (spatial upscaling) is a WebGL2 port of AMD's MIT-licensed FidelityFX source and runs only in this browser lab; the native C++ core has no renderer. This site is not affiliated with or endorsed by AMD. See <a href="assets/THIRD_PARTY_NOTICES.txt">third-party notices</a>.</div></aside></div></div>
+        <div class="lab-panel is-active" data-lab-panel="graphics"><div class="lab-main-grid"><div class="lab-render-frame"><div class="lab-topline"><span><span class="tiny-led"></span> LIVE WEBGL2 / PROCEDURAL RAY MARCHING</span><span id="render-fps">— FPS</span></div><div class="render-viewport" id="render-viewport"><canvas id="render-canvas" aria-label="Interactive procedural 3D rendering comparison"></canvas><div class="render-loading" id="render-loading">Initialising GPU demonstration…</div><div class="render-label left">ENHANCED LIGHTING</div><div class="render-label right">BASIC LIGHTING</div><div class="render-centerline" id="render-centerline"><span>↔</span></div></div><div class="lab-bottom"><span id="render-resolution">WEBGL2 / READY</span><span>DRAG TO ORBIT • SLIDE TO COMPARE</span></div></div><aside class="lab-controls"><div class="eyebrow">GRAPHICS PIPELINE</div><h2>Lighting.<br>Compared.</h2><p>Compare procedural ray-marched lighting with a simplified view. The enhanced mode uses additional shadow and reflection rays inside a fragment shader.</p><div class="control"><div class="control-head"><label for="comparison">Lighting comparison</label><output id="comparison-value">50 / 50</output></div><input type="range" id="comparison" min="0" max="100" value="50"></div><div class="control"><label for="scene-select">Environment</label><select id="scene-select"><option value="0">Studio / Chrome</option><option value="1">Aurora / Night</option><option value="2">Monolith / Ambient</option></select></div><div class="control"><label for="quality-select">Render scale</label><select id="quality-select"><option value="0.5">FSR 2.0x (50%)</option><option value="0.59">FSR 1.7x (59%)</option><option value="0.67">FSR 1.5x (67%)</option><option value="0.77">FSR 1.3x (77%)</option><option value="0.85" selected>Balanced (85%)</option><option value="1">Native (100%)</option></select></div><div class="control"><label for="upscaler-select">Upscaler</label><select id="upscaler-select"><option value="bilinear">Bilinear (no upscaler)</option><option value="fsr" selected>AMD FSR 1.0 (EASU + RCAS)</option></select></div><div class="control"><div class="control-head"><label for="sharpness">FSR sharpness</label><output id="sharpness-value" for="sharpness">0.50 stops</output></div><input type="range" id="sharpness" min="0" max="100" value="75"></div><div class="control-actions"><button class="button button-outline button-small" id="render-pause" type="button">Pause</button><button class="button button-outline button-small" id="render-reset" type="button">Reset camera</button></div><div class="minor-note"><b>Research demo, not product benchmark.</b> Shader calculations run on the visitor's GPU through WebGL2. Performance varies by browser and hardware; hardware RTX acceleration is not claimed. AMD FSR 1.0 (spatial upscaling) is a WebGL2 port of AMD's MIT-licensed FidelityFX source and runs only in this browser lab; the native C++ core has no renderer. This site is not affiliated with or endorsed by AMD. See <a href="#playground" id="third-party-link">third-party notices</a>.</div></aside></div></div>
         <div class="lab-panel" data-lab-panel="physics" hidden><div class="lab-main-grid"><div class="lab-render-frame"><div class="lab-topline"><span><span class="tiny-led"></span> LIVE 2D PHYSICS / JAVASCRIPT</span><span id="physics-fps">— FPS</span></div><div class="physics-viewport"><canvas id="physics-canvas" aria-label="Interactive bouncing ball physics simulation"></canvas><div class="physics-hint">Click or tap to spawn a ball. Drag an existing ball to throw it.</div></div><div class="lab-bottom"><span id="physics-count">0 OBJECTS</span><span>FIXED TIMESTEP / 120 HZ</span></div></div><aside class="lab-controls"><div class="eyebrow">MOTION EXPERIMENT</div><h2>Make<br>things move.</h2><p>A browser-only physics study with gravity, collisions, drag and an accumulator-based fixed timestep.</p><div class="control"><div class="control-head"><label for="gravity">Gravity</label><output id="gravity-value">720</output></div><input id="gravity" type="range" min="0" max="1600" step="20" value="720"></div><div class="control"><div class="control-head"><label for="bounce">Restitution</label><output id="bounce-value">0.80</output></div><input id="bounce" type="range" min="20" max="100" value="80"></div><div class="control-actions"><button class="button button-bright button-small" id="physics-add" type="button">Add object</button><button class="button button-outline button-small" id="physics-clear" type="button">Reset scene</button></div><div class="minor-note"><b>Separate prototype.</b> This simulator is written in JavaScript and does not prove a native Xelqora physics engine exists yet.</div></aside></div></div>
-        <div class="lab-panel" data-lab-panel="diagnostics" hidden><div class="diagnostics-layout"><div><div class="eyebrow">ENVIRONMENT INSPECTOR</div><h2>Know your<br>runtime.</h2><p>Inspect the current browser's feature support and run a local deterministic scheduler check. This checks the browser lab, not the native C++ source.</p><button class="button button-bright" id="diag-run" type="button">Run browser checks <span aria-hidden="true">→</span></button><div class="minor-note">The optional PHP backend check requires a PHP-enabled server. A static HTML preview cannot execute PHP.</div></div><div class="diag-box"><div class="diag-top">XELQORA / DIAGNOSTICS <span id="diag-time">NOT RUN</span></div><div id="diag-results" aria-live="polite"><div class="diag-placeholder">Run checks to see results.</div></div></div></div></div>
+        <div class="lab-panel" data-lab-panel="diagnostics" hidden><div class="diagnostics-layout"><div><div class="eyebrow">ENVIRONMENT INSPECTOR</div><h2>Know your<br>runtime.</h2><p>Inspect the current browser's feature support and run a local deterministic scheduler check. This checks the browser lab, not the native C++ source.</p><button class="button button-bright" id="diag-run" type="button">Run browser checks <span aria-hidden="true">→</span></button><div class="minor-note">The project-manifest check uses the optional PHP endpoint when available and falls back to data/project.json on static hosts such as GitHub Pages.</div></div><div class="diag-box"><div class="diag-top">XELQORA / DIAGNOSTICS <span id="diag-time">NOT RUN</span></div><div id="diag-results" aria-live="polite"><div class="diag-placeholder">Run checks to see results.</div></div></div></div></div>
         <div class="footnote-strip"><b>Why browser demos?</b> The native Xelqora Core 2.0 is a headless C++ foundation. A future WebAssembly port could expose real core code to this playground; current labs are independent web prototypes.</div>
       </div>
+<div class="shell"><details id="third-party-notices" style="margin:0 0 80px;padding:19px 24px;border:1px solid #30434b;background:#101b24;border-radius:8px"><summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--aqua)">Third-party licences &amp; attribution</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;color:var(--sub);font:11px/1.7 monospace;max-width:850px;margin-top:18px">THIRD-PARTY NOTICES — XELQORA BROWSER RESEARCH LAB
+
+The WebGL2 FSR 1.0 shaders in assets/fsr1-webgl2.js are derived from
+AMD FidelityFX Super Resolution 1.0 source code:
+https://github.com/GPUOpen-Effects/FidelityFX-FSR
+
+Copyright (c) 2021 Advanced Micro Devices, Inc. All rights reserved.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This website is not sponsored, affiliated with or endorsed by AMD.
+&quot;AMD&quot;, &quot;FidelityFX&quot; and &quot;FSR&quot; are trademarks of their respective owners.
+
+Site fonts: DM Sans and Space Grotesk are requested from Google Fonts.
+The site includes system-font fallbacks for offline use.
+</pre></details></div>
     </section>
-    <section class="page" id="page-technology" data-page="technology" aria-labelledby="tech-title" hidden><div class="shell page-head"><div class="eyebrow">XELQORA / ENGINE SYSTEMS</div><div class="page-headline"><h1 id="tech-title">DESIGNED FOR<br><em>WHAT'S NEXT.</em></h1><p>Modular ambitions, measured progress. These are the foundations under development—not a list of completed production features.</p></div></div><div class="shell tech-layout"><div class="tech-feature"><span class="tech-number">01 — CORE</span><div class="tech-graphic"><div class="tech-graphic-inner">X<span> / </span>C++20</div><div class="tech-graphic-lines"></div></div><h2>Start with a reliable foundation.</h2><p>Core 2.0 explores lifecycle management, vector and matrix maths, fixed timestep scheduling and portable CMake builds. Its prototype has previously passed GCC and Clang test cases in a development environment; native Windows verification remains pending.</p><a href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer" class="text-link">Explore repository <span>↗</span></a></div><div class="tech-list"><article><span>02</span><div><h3>Rendering systems <small>RESEARCH</small></h3><p>WebGL2 procedural demos today; future renderer abstractions, scene materials, ray effects and cross-platform backends are goals.</p></div></article><article><span>03</span><div><h3>Physics and simulation <small>EXPERIMENTAL</small></h3><p>Browser physics experiments explore collision behaviour and fixed-step timing. Native integration is not complete.</p></div></article><article><span>04</span><div><h3>Super resolution <small>PLANNED</small></h3><p>Xelqora Super Resolution (XSR) is a research direction. The browser rendering lab includes a WebGL2 port of AMD FSR 1.0 (spatial EASU + RCAS); FSR 2/3, frame generation and neural upscalers are not included.</p></div></article><article><span>05</span><div><h3>Audio and assets <small>PLANNED</small></h3><p>Future work includes audio playback, asset loading, error handling and packaging workflows.</p></div></article><article><span>06</span><div><h3>Release engineering <small>IN PROGRESS</small></h3><p>Automated tests, cross-platform builds, transparent release notes and an eventual stability-focused LTS channel.</p></div></article></div></div></section>
-    <section class="page" id="page-roadmap" data-page="roadmap" aria-labelledby="roadmap-title" hidden><div class="shell page-head"><div class="eyebrow">XELQORA / DEVELOPMENT TRACKER</div><div class="page-headline"><h1 id="roadmap-title">THE ROAD<br><em>AHEAD.</em></h1><p>Progress is tracked by implementation and verification—not marketing dates. Features below may change as the engine matures.</p></div></div><div class="shell"><div class="roadmap-board" id="roadmap-board"><article class="roadmap-row"><div class="roadmap-step">01</div><div><h3>Core foundation</h3><p>Math, scheduling, application lifecycle</p></div><span class="roadmap-state">PROTOTYPE</span></article><article class="roadmap-row"><div class="roadmap-step">02</div><div><h3>Platform backend</h3><p>Windows event processing, input, windows</p></div><span class="roadmap-state">NEXT</span></article><article class="roadmap-row"><div class="roadmap-step">03</div><div><h3>Rendering interface</h3><p>RHI design, shader and projection conventions</p></div><span class="roadmap-state">RESEARCH</span></article><article class="roadmap-row"><div class="roadmap-step">04</div><div><h3>Asset and scene management</h3><p>Loading, scene graph and content flow</p></div><span class="roadmap-state">PLANNED</span></article><article class="roadmap-row"><div class="roadmap-step">05</div><div><h3>LTS distribution</h3><p>Stability criteria, release maintenance</p></div><span class="roadmap-state">PLANNED</span></article></div><div class="roadmap-foot"><b>Release philosophy</b><p>Core development is experimental. Stable and LTS releases will only be announced once real binaries, tests and maintenance expectations exist.</p></div></div></section>
-    <section class="page" id="page-downloads" data-page="downloads" aria-labelledby="downloads-title" hidden><div class="shell page-head"><div class="eyebrow">XELQORA / DISTRIBUTION</div><div class="page-headline"><h1 id="downloads-title">GET THE<br><em>SOURCE.</em></h1><p>Source, experiments and release planning—all in one place. We only show working, verifiable links, not fictional binaries.</p></div></div><div class="shell downloads-grid"><article class="download-panel featured"><span class="download-type">SOURCE / GITHUB</span><div class="download-symbol">⌘</div><h2>Xelqora Engine</h2><p>Visit the project's public repository to inspect code, documentation and any releases actually published.</p><a class="button button-bright" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Open GitHub <span aria-hidden="true">↗</span></a></article><article class="download-panel"><span class="download-type">EARLY-STAGE / EXPERIMENTAL</span><div class="availability">NOT VERIFIED FOR RELEASE</div><h2>Core 2.0 build</h2><p>A native C++20 headless foundation exists in reviewed source. The site does not claim a downloadable installer or complete game editor.</p><a class="text-link" href="https://github.com/MrNT10/Xelqora-engine/releases" target="_blank" rel="noopener noreferrer">Check actual GitHub releases <span>↗</span></a></article><article class="download-panel"><span class="download-type">STABILITY CHANNEL / PROPOSED</span><div class="availability">FUTURE CHANNEL</div><h2>Xelqora LTS</h2><p>A proposed long-term stability channel. No downloadable LTS release, support guarantee or Patreon entitlement is advertised here yet.</p><a class="text-link" href="#roadmap" data-tab-link="roadmap">See the release roadmap <span>→</span></a></article></div><div class="shell licence-strip"><b>Licence and attribution</b><p>Licence selection is being reviewed. Consult the applicable <code>LICENSE</code> file for each version in the GitHub repository. Previous GPL-covered releases keep their original terms; this site does not relicense code.</p></div></section>
-    <section class="page" id="page-about" data-page="about" aria-labelledby="about-title" hidden><div class="shell page-head"><div class="eyebrow">XELQORA / OUR APPROACH</div><div class="page-headline"><h1 id="about-title">ENGINEERED<br><em>WITH INTENT.</em></h1><p>A focused independent development project, directed by MrNT10 and assisted by AI tools for design, implementation and code review.</p></div></div><div class="shell about-grid"><div class="about-statement"><span class="eyebrow">OPEN BY DESIGN. POWERFUL BY NATURE.</span><h2>Make room for experimentation.<br><span class="subtle">Back it with careful engineering.</span></h2><p>Xelqora is an evolving family of engine prototypes and technical research. Our focus is dependable foundations, clear documentation, independent reviews and honest feature claims.</p><div class="about-action"><a class="button button-bright" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Visit MrNT10 on GitHub <span aria-hidden="true">↗</span></a></div></div><div class="about-facts"><div><span>PROJECT</span><b>Xelqora Engine</b></div><div><span>MAINTAINER</span><b>MrNT10</b></div><div><span>STATUS</span><b>Early-stage development</b></div><div><span>TOOLS</span><b>C++20, CMake, JavaScript, WebGL2, PHP</b></div><div><span>CONTRIBUTIONS</span><b>Human-directed, AI-assisted</b></div></div></div><div class="shell contact-panel"><div><div class="eyebrow">CONNECT</div><h2>Follow the build.</h2><p>Development updates, source code and eventual validated releases will be linked from the project repository.</p></div><a class="button button-outline" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></div></section>
+    <section class="page" id="page-technology" data-page="technology" aria-labelledby="tech-title" hidden><div class="shell page-head"><div class="eyebrow">BEHIND THE SCENES</div><div class="page-headline"><h1 id="tech-title">HOW IT<br><em>WORKS (SO FAR).</em></h1><p>Curious how it works? Here’s what’s in the prototypes and what’s still on the drawing board. No pretending unfinished features are done.</p></div></div><div class="shell tech-layout"><div class="tech-feature"><span class="tech-number">01 — CORE</span><div class="tech-graphic"><div class="tech-graphic-inner">X<span> / </span>C++20</div><div class="tech-graphic-lines"></div></div><h2>Start with a reliable foundation.</h2><p>Core 2.0 explores lifecycle management, vector and matrix maths, fixed timestep scheduling and portable CMake builds. Its prototype has previously passed GCC and Clang test cases in a development environment; native Windows verification remains pending.</p><a href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer" class="text-link">Explore repository <span>↗</span></a></div><div class="tech-list"><article><span>02</span><div><h3>Rendering systems <small>RESEARCH</small></h3><p>WebGL2 procedural demos today; future renderer abstractions, scene materials, ray effects and cross-platform backends are goals.</p></div></article><article><span>03</span><div><h3>Physics and simulation <small>EXPERIMENTAL</small></h3><p>Browser physics experiments explore collision behaviour and fixed-step timing. Native integration is not complete.</p></div></article><article><span>04</span><div><h3>Super resolution <small>PLANNED</small></h3><p>Xelqora Super Resolution (XSR) is a research direction. The browser rendering lab includes a WebGL2 port of AMD FSR 1.0 (spatial EASU + RCAS); FSR 2/3, frame generation and neural upscalers are not included.</p></div></article><article><span>05</span><div><h3>Audio and assets <small>PLANNED</small></h3><p>Future work includes audio playback, asset loading, error handling and packaging workflows.</p></div></article><article><span>06</span><div><h3>Release engineering <small>IN PROGRESS</small></h3><p>Automated tests, cross-platform builds, transparent release notes and an eventual stability-focused LTS channel.</p></div></article></div></div></section>
+    <section class="page" id="page-roadmap" data-page="roadmap" aria-labelledby="roadmap-title" hidden><div class="shell page-head"><div class="eyebrow">OUR WORK-IN-PROGRESS LIST</div><div class="page-headline"><h1 id="roadmap-title">WHAT’S<br><em>COMING NEXT?</em></h1><p>This is our rough plan, not a release-date promise. Priorities can change as we test ideas and discover new problems.</p></div></div><div class="shell"><div class="roadmap-board" id="roadmap-board"><article class="roadmap-row"><div class="roadmap-step">01</div><div><h3>Core foundation</h3><p>Math, scheduling, application lifecycle</p></div><span class="roadmap-state">PROTOTYPE</span></article><article class="roadmap-row"><div class="roadmap-step">02</div><div><h3>Platform backend</h3><p>Windows event processing, input, windows</p></div><span class="roadmap-state">NEXT</span></article><article class="roadmap-row"><div class="roadmap-step">03</div><div><h3>Rendering interface</h3><p>RHI design, shader and projection conventions</p></div><span class="roadmap-state">RESEARCH</span></article><article class="roadmap-row"><div class="roadmap-step">04</div><div><h3>Asset and scene management</h3><p>Loading, scene graph and content flow</p></div><span class="roadmap-state">PLANNED</span></article><article class="roadmap-row"><div class="roadmap-step">05</div><div><h3>LTS distribution</h3><p>Stability criteria, release maintenance</p></div><span class="roadmap-state">PLANNED</span></article></div><div class="roadmap-foot"><b>How releases work</b><p>We’re still experimenting. Stable and LTS versions will only be announced once we have actual builds, tests and a clear maintenance plan.</p></div></div></section>
+    <section class="page" id="page-downloads" data-page="downloads" aria-labelledby="downloads-title" hidden><div class="shell page-head"><div class="eyebrow">GET INVOLVED / SOURCE CODE</div><div class="page-headline"><h1 id="downloads-title">GRAB THE<br><em>CODE.</em></h1><p>Want to see what’s been made? Start with the GitHub repository. Native installers and stable releases are still future plans.</p></div></div><div class="shell downloads-grid"><article class="download-panel featured"><span class="download-type">SOURCE / GITHUB</span><div class="download-symbol">⌘</div><h2>Xelqora Engine</h2><p>Browse the public source, read the documentation, and see any releases that are actually available.</p><a class="button button-bright" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Open GitHub <span aria-hidden="true">↗</span></a></article><article class="download-panel"><span class="download-type">EARLY-STAGE / EXPERIMENTAL</span><div class="availability">NOT VERIFIED FOR RELEASE</div><h2>Core 2.0 build</h2><p>A native C++20 headless foundation exists in reviewed source. The site does not claim a downloadable installer or complete game editor.</p><a class="text-link" href="https://github.com/MrNT10/Xelqora-engine/releases" target="_blank" rel="noopener noreferrer">Check actual GitHub releases <span>↗</span></a></article><article class="download-panel"><span class="download-type">STABILITY CHANNEL / PROPOSED</span><div class="availability">FUTURE CHANNEL</div><h2>Xelqora LTS</h2><p>A proposed long-term stability channel. No downloadable LTS release, support guarantee or Patreon entitlement is advertised here yet.</p><a class="text-link" href="#roadmap" data-tab-link="roadmap">See the release roadmap <span>→</span></a></article></div><div class="shell licence-strip"><b>Licence and attribution</b><p>Licence selection is being reviewed. Consult the applicable <code>LICENSE</code> file for each version in the GitHub repository. Previous GPL-covered releases keep their original terms; this site does not relicense code.</p></div></section>
+    <section class="page" id="page-about" data-page="about" aria-labelledby="about-title" hidden>
+      <div class="shell page-head">
+        <div class="eyebrow">THE PEOPLE AND TOOLS BEHIND XELQORA</div>
+        <div class="page-headline"><h1 id="about-title">BUILT TO<br><em>BE SHARED.</em></h1><p>Xelqora isn't an enterprise platform or a huge studio. It's a community-focused experiment, started by MrNT10 and developed with help from Claude and GPT-6.</p></div>
+      </div>
+      <div class="shell about-grid">
+        <div class="about-statement">
+          <span class="eyebrow">OPEN BY DESIGN. POWERFUL BY NATURE.</span>
+          <h2>A place for curious people.<br><span class="subtle">Not a sales pitch.</span></h2>
+          <p>Xelqora is about trying ideas, sharing the results, and learning as we go. Some pieces work already; others are sketches, plans or experiments. We want the website to show that honestly and make it fun to explore.</p>
+          <p class="about-credits">This project is directed and maintained by <b>MrNT10</b>. Its development has used <b>Claude (Anthropic)</b> and <b>GPT-6 (OpenAI)</b> to help create and improve code and design. That credit doesn't imply endorsement or sponsorship by either company.</p>
+          <div class="about-action"><a class="button button-bright" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Explore the GitHub project <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="about-facts">
+          <div><span>PROJECT</span><b>Xelqora Engine</b></div>
+          <div><span>WHAT IT IS</span><b>Community-focused engine experiment</b></div>
+          <div><span>STARTED BY</span><b>MrNT10</b></div>
+          <div><span>BUILT WITH</span><b>Claude + GPT-6</b></div>
+          <div><span>CURRENT STATUS</span><b>Early-stage, actively experimental</b></div>
+          <div><span>TECHNOLOGIES</span><b>C++20 · JavaScript · WebGL2 · PHP</b></div>
+        </div>
+      </div>
+      <div class="shell community-section">
+        <div class="community-section-head"><span class="eyebrow">THERE'S ROOM TO EXPLORE</span><h2>Jump in however you like.</h2><p>You don't need to be a professional developer to be curious about how an engine works.</p></div>
+        <div class="community-grid">
+          <article class="community-card"><span class="community-card-symbol" aria-hidden="true">✳</span><h3>Try something</h3><p>Open the graphics lab, play with the controls, and see what happens.</p><a href="#playground" data-tab-link="playground">Go to the playground <span aria-hidden="true">↗</span></a></article>
+          <article class="community-card"><span class="community-card-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Explore the code</h3><p>Read the repository, look through experiments, and learn how parts fit together.</p><a href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Browse GitHub <span aria-hidden="true">↗</span></a></article>
+          <article class="community-card"><span class="community-card-symbol" aria-hidden="true">↗</span><h3>Follow the progress</h3><p>See the things we're trying next, and which features are still only ideas.</p><a href="#roadmap" data-tab-link="roadmap">Read the roadmap <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </div>
+      <div class="shell contact-panel"><div><div class="eyebrow">COME TAKE A LOOK</div><h2>It's a work in progress. That's the fun part.</h2><p>Source, updates, and any real releases will be linked from GitHub.</p></div><a class="button button-outline" href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">Visit the repository ↗</a></div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="shell footer-grid"><div><div class="footer-brand">XELQORA <span>ENGINE</span></div><p>Open by Design. Powerful by Nature.<br>Experimental technology, real engineering.</p></div><div class="footer-links"><span>EXPLORE</span><a href="#playground" data-tab-link="playground">Playground</a><a href="#technology" data-tab-link="technology">Technology</a><a href="#roadmap" data-tab-link="roadmap">Roadmap</a></div><div class="footer-links"><span>PROJECT</span><a href="#downloads" data-tab-link="downloads">Source & downloads</a><a href="#about" data-tab-link="about">About Xelqora</a><a href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="shell footer-bottom"><span>© 2026 XELQORA LABS / MRNT10 — FOR APPLICABLE ORIGINAL CONTENT</span><span>EXPERIMENTAL PROJECT • NOT A FINISHED ENGINE RELEASE</span></div></footer>
+  <footer class="site-footer"><div class="shell footer-grid"><div><div class="footer-brand">XELQORA <span>ENGINE</span></div><p>Open by Design. Powerful by Nature.<br>A community project made for curious people.</p></div><div class="footer-links"><span>EXPLORE</span><a href="#playground" data-tab-link="playground">Playground</a><a href="#technology" data-tab-link="technology">Technology</a><a href="#roadmap" data-tab-link="roadmap">Roadmap</a></div><div class="footer-links"><span>PROJECT</span><a href="#downloads" data-tab-link="downloads">Source & downloads</a><a href="#about" data-tab-link="about">Community &amp; credits</a><a href="https://github.com/MrNT10/Xelqora-engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="shell footer-bottom"><span>© 2026 XELQORA / MRNT10 — ORIGINAL SITE MATERIAL</span><span>COMMUNITY PROJECT · BUILT WITH CLAUDE + GPT-6</span></div></footer>
+
+<script type="application/json" id="xelqora-project-manifest">
+{
+  "project": "Xelqora Engine",
+  "brand": "Xelqora Community",
+  "tagline": "Open by Design. Powerful by Nature.",
+  "version": "Core 2.0",
+  "phase": "Early development",
+  "repository": "https://github.com/MrNT10/Xelqora-engine",
+  "current": {
+    "name": "Core 2.0 — C++20 foundation",
+    "available": false,
+    "description": "Headless application lifecycle, timing, fixed timestep, math and tests. Check the repository for actual published source and releases."
+  },
+  "lts": {
+    "name": "Xelqora LTS",
+    "available": false,
+    "description": "Proposed stability-focused channel. No public or Patreon LTS build has been verified."
+  },
+  "labs": {
+    "name": "Browser Graphics Lab",
+    "available": true,
+    "description": "A standalone JavaScript/WebGL2 research showcase (includes an AMD FSR 1.0 upscaling port), not a compiled Xelqora C++ engine build."
+  },
+  "milestones": [
+    {"title": "Core foundation", "state": "Prototype", "detail": "C++20 timing, math, lifecycle and headless test runner"},
+    {"title": "Platform backend", "state": "Next", "detail": "Windows event loop, input and window integration"},
+    {"title": "Rendering interface", "state": "Research", "detail": "RHI conventions, shader pipeline and material model"},
+    {"title": "Assets and scenes", "state": "Planned", "detail": "Asset loading, scene graph and authoring tools"},
+    {"title": "LTS distribution", "state": "Planned", "detail": "Build validation, release cadence and maintenance policy"}
+  ]
+}
+
+</script>
+<script>
+/* AMD FidelityFX Super Resolution 1.0 (EASU + RCAS) — WebGL2 / GLSL ES 3.00 port.
+
+   Derived from AMD's FidelityFX-FSR sources (ffx_a.h, ffx_fsr1.h):
+   Copyright (c) 2021 Advanced Micro Devices, Inc. All rights reserved.
+   Licensed under the MIT License; the full notice is in THIRD_PARTY_NOTICES.txt.
+   Upstream: https://github.com/GPUOpen-Effects/FidelityFX-FSR
+
+   Port notes
+   - Only the 32-bit non-packed EASU and RCAS paths are ported. RCAS denoise is off (upstream default).
+   - WebGL2 has no textureGather(), so the 4-texel "gather" is emulated with texelFetch() and keeps
+     upstream's component order (x=bottom-left, y=bottom-right, z=top-right, w=top-left).
+   - Upstream's integer-packed constants (FsrEasuCon / FsrRcasCon) are plain float uniforms here.
+   - The approximate rcp/rsqrt helpers use the same bit tricks and magic numbers as ffx_a.h.
+   This is spatial FSR 1.0 only. FSR 2/3 (temporal, motion vectors) and the C++ engine are not involved.
+   Not affiliated with or endorsed by AMD. "AMD", "FidelityFX" and "FSR" are trademarks of their owner. */
+'use strict';
+(() => {
+  const vertex = `#version 300 es
+  precision highp float;
+  void main() { vec2 pos = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2); gl_Position = vec4(pos * 2.0 - 1.0, 0.0, 1.0); }`;
+
+  // Plain bilinear presentation pass, used for the "no upscaler" baseline.
+  const bilinearFragment = `#version 300 es
+  precision highp float; precision highp sampler2D;
+  uniform sampler2D uTex; uniform vec2 uOutSize; out vec4 outColor;
+  void main() { outColor = vec4(texture(uTex, gl_FragCoord.xy / uOutSize).rgb, 1.0); }`;
+
+  // EASU: Edge Adaptive Spatial Upsampling (12-tap, edge-directed Lanczos-like kernel with deringing).
+  const easuFragment = `#version 300 es
+  precision highp float; precision highp int; precision highp sampler2D;
+  uniform sampler2D uTex;                  // low-resolution input
+  uniform vec4 uCon0, uCon1, uCon2, uCon3; // FsrEasuCon() values
+  out vec4 outColor;
+  ivec2 gTexSize;
+
+  float ASat(float x) { return clamp(x, 0.0, 1.0); }
+  float APrxLoRcp(float a) { return uintBitsToFloat(0x7ef07ebbu - floatBitsToUint(a)); }
+  float APrxLoRsq(float a) { return uintBitsToFloat(0x5f347d74u - (floatBitsToUint(a) >> 1u)); }
+  vec3 AMin3(vec3 x, vec3 y, vec3 z) { return min(x, min(y, z)); }
+  vec3 AMax3(vec3 x, vec3 y, vec3 z) { return max(x, max(y, z)); }
+
+  // Emulates textureGather() at a texel corner p: returns (BL, BR, TR, TL) of the 2x2 footprint.
+  void gather(vec2 p, out vec4 r, out vec4 g, out vec4 b) {
+    ivec2 k = ivec2(floor(p * vec2(gTexSize) + 0.5));
+    ivec2 mx = gTexSize - 1;
+    vec3 bl = texelFetch(uTex, clamp(ivec2(k.x - 1, k.y    ), ivec2(0), mx), 0).rgb;
+    vec3 br = texelFetch(uTex, clamp(ivec2(k.x    , k.y    ), ivec2(0), mx), 0).rgb;
+    vec3 tr = texelFetch(uTex, clamp(ivec2(k.x    , k.y - 1), ivec2(0), mx), 0).rgb;
+    vec3 tl = texelFetch(uTex, clamp(ivec2(k.x - 1, k.y - 1), ivec2(0), mx), 0).rgb;
+    r = vec4(bl.r, br.r, tr.r, tl.r);
+    g = vec4(bl.g, br.g, tr.g, tl.g);
+    b = vec4(bl.b, br.b, tr.b, tl.b);
+  }
+
+  // Filtering for a given tap for the scalar.
+  void FsrEasuTapF(inout vec3 aC, inout float aW, vec2 off, vec2 dir, vec2 len, float lob, float clp, vec3 c) {
+    vec2 v;
+    v.x = (off.x * ( dir.x)) + (off.y * dir.y);
+    v.y = (off.x * (-dir.y)) + (off.y * dir.x);
+    v *= len;
+    float d2 = v.x * v.x + v.y * v.y;
+    d2 = min(d2, clp);
+    float wB = (2.0 / 5.0) * d2 + -1.0;
+    float wA = lob * d2 + -1.0;
+    wB *= wB;
+    wA *= wA;
+    wB = (25.0 / 16.0) * wB + -(25.0 / 16.0 - 1.0);
+    float w = wB * wA;
+    aC += c * w; aW += w;
+  }
+
+  // Accumulate direction and length.
+  void FsrEasuSetF(inout vec2 dir, inout float len, vec2 pp, bool biS, bool biT, bool biU, bool biV,
+                   float lA, float lB, float lC, float lD, float lE) {
+    float w = 0.0;
+    if (biS) w = (1.0 - pp.x) * (1.0 - pp.y);
+    if (biT) w =        pp.x  * (1.0 - pp.y);
+    if (biU) w = (1.0 - pp.x) *        pp.y ;
+    if (biV) w =        pp.x  *        pp.y ;
+    float dc = lD - lC;
+    float cb = lC - lB;
+    float lenX = max(abs(dc), abs(cb));
+    lenX = APrxLoRcp(lenX);
+    float dirX = lD - lB;
+    dir.x += dirX * w;
+    lenX = ASat(abs(dirX) * lenX);
+    lenX *= lenX;
+    len += lenX * w;
+    float ec = lE - lC;
+    float ca = lC - lA;
+    float lenY = max(abs(ec), abs(ca));
+    lenY = APrxLoRcp(lenY);
+    float dirY = lE - lA;
+    dir.y += dirY * w;
+    lenY = ASat(abs(dirY) * lenY);
+    lenY *= lenY;
+    len += lenY * w;
+  }
+
+  void main() {
+    gTexSize = textureSize(uTex, 0);
+    vec2 ip = floor(gl_FragCoord.xy);
+    // Get position of 'f'.
+    vec2 pp = ip * uCon0.xy + uCon0.zw;
+    vec2 fp = floor(pp);
+    pp -= fp;
+    // 12-tap kernel.   b c / e f g h / i j k l / n o
+    vec2 p0 = fp * uCon1.xy + uCon1.zw;
+    vec2 p1 = p0 + uCon2.xy;
+    vec2 p2 = p0 + uCon2.zw;
+    vec2 p3 = p0 + uCon3.xy;
+    vec4 bczzR, bczzG, bczzB, ijfeR, ijfeG, ijfeB, klhgR, klhgG, klhgB, zzonR, zzonG, zzonB;
+    gather(p0, bczzR, bczzG, bczzB);
+    gather(p1, ijfeR, ijfeG, ijfeB);
+    gather(p2, klhgR, klhgG, klhgB);
+    gather(p3, zzonR, zzonG, zzonB);
+    // Simplest multi-channel approximate luma possible (luma times 2, in 2 FMA/MAD).
+    vec4 bczzL = bczzB * 0.5 + (bczzR * 0.5 + bczzG);
+    vec4 ijfeL = ijfeB * 0.5 + (ijfeR * 0.5 + ijfeG);
+    vec4 klhgL = klhgB * 0.5 + (klhgR * 0.5 + klhgG);
+    vec4 zzonL = zzonB * 0.5 + (zzonR * 0.5 + zzonG);
+    float bL = bczzL.x; float cL = bczzL.y;
+    float iL = ijfeL.x; float jL = ijfeL.y; float fL = ijfeL.z; float eL = ijfeL.w;
+    float kL = klhgL.x; float lL = klhgL.y; float hL = klhgL.z; float gL = klhgL.w;
+    float oL = zzonL.z; float nL = zzonL.w;
+    // Accumulate for bilinear interpolation.
+    vec2 dir = vec2(0.0);
+    float len = 0.0;
+    FsrEasuSetF(dir, len, pp, true,  false, false, false, bL, eL, fL, gL, jL);
+    FsrEasuSetF(dir, len, pp, false, true,  false, false, cL, fL, gL, hL, kL);
+    FsrEasuSetF(dir, len, pp, false, false, true,  false, fL, iL, jL, kL, nL);
+    FsrEasuSetF(dir, len, pp, false, false, false, true,  gL, jL, kL, lL, oL);
+    // Normalize with approximation, and cleanup close to zero.
+    vec2 dir2 = dir * dir;
+    float dirR = dir2.x + dir2.y;
+    bool zro = dirR < (1.0 / 32768.0);
+    dirR = APrxLoRsq(dirR);
+    dirR = zro ? 1.0 : dirR;
+    dir.x = zro ? 1.0 : dir.x;
+    dir *= vec2(dirR);
+    // Transform from {0 to 2} to {0 to 1} range, and shape with square.
+    len = len * 0.5;
+    len *= len;
+    // Stretch kernel {1.0 vert|horz, to sqrt(2.0) on diagonal}.
+    float stretch = (dir.x * dir.x + dir.y * dir.y) * APrxLoRcp(max(abs(dir.x), abs(dir.y)));
+    // Anisotropic length after rotation.
+    vec2 len2 = vec2(1.0 + (stretch - 1.0) * len, 1.0 + -0.5 * len);
+    // Based on the amount of 'edge', the window shifts from +/-{sqrt(2.0) to slightly beyond 2.0}.
+    float lob = 0.5 + ((1.0 / 4.0 - 0.04) - 0.5) * len;
+    // Set distance^2 clipping point to the end of the adjustable window.
+    float clp = APrxLoRcp(lob);
+    // Accumulation mixed with min/max of 4 nearest.
+    vec3 min4 = min(AMin3(vec3(ijfeR.z, ijfeG.z, ijfeB.z), vec3(klhgR.w, klhgG.w, klhgB.w), vec3(ijfeR.y, ijfeG.y, ijfeB.y)),
+                    vec3(klhgR.x, klhgG.x, klhgB.x));
+    vec3 max4 = max(AMax3(vec3(ijfeR.z, ijfeG.z, ijfeB.z), vec3(klhgR.w, klhgG.w, klhgB.w), vec3(ijfeR.y, ijfeG.y, ijfeB.y)),
+                    vec3(klhgR.x, klhgG.x, klhgB.x));
+    vec3 aC = vec3(0.0);
+    float aW = 0.0;
+    FsrEasuTapF(aC, aW, vec2( 0.0, -1.0) - pp, dir, len2, lob, clp, vec3(bczzR.x, bczzG.x, bczzB.x)); // b
+    FsrEasuTapF(aC, aW, vec2( 1.0, -1.0) - pp, dir, len2, lob, clp, vec3(bczzR.y, bczzG.y, bczzB.y)); // c
+    FsrEasuTapF(aC, aW, vec2(-1.0,  1.0) - pp, dir, len2, lob, clp, vec3(ijfeR.x, ijfeG.x, ijfeB.x)); // i
+    FsrEasuTapF(aC, aW, vec2( 0.0,  1.0) - pp, dir, len2, lob, clp, vec3(ijfeR.y, ijfeG.y, ijfeB.y)); // j
+    FsrEasuTapF(aC, aW, vec2( 0.0,  0.0) - pp, dir, len2, lob, clp, vec3(ijfeR.z, ijfeG.z, ijfeB.z)); // f
+    FsrEasuTapF(aC, aW, vec2(-1.0,  0.0) - pp, dir, len2, lob, clp, vec3(ijfeR.w, ijfeG.w, ijfeB.w)); // e
+    FsrEasuTapF(aC, aW, vec2( 1.0,  1.0) - pp, dir, len2, lob, clp, vec3(klhgR.x, klhgG.x, klhgB.x)); // k
+    FsrEasuTapF(aC, aW, vec2( 2.0,  1.0) - pp, dir, len2, lob, clp, vec3(klhgR.y, klhgG.y, klhgB.y)); // l
+    FsrEasuTapF(aC, aW, vec2( 2.0,  0.0) - pp, dir, len2, lob, clp, vec3(klhgR.z, klhgG.z, klhgB.z)); // h
+    FsrEasuTapF(aC, aW, vec2( 1.0,  0.0) - pp, dir, len2, lob, clp, vec3(klhgR.w, klhgG.w, klhgB.w)); // g
+    FsrEasuTapF(aC, aW, vec2( 1.0,  2.0) - pp, dir, len2, lob, clp, vec3(zzonR.z, zzonG.z, zzonB.z)); // o
+    FsrEasuTapF(aC, aW, vec2( 0.0,  2.0) - pp, dir, len2, lob, clp, vec3(zzonR.w, zzonG.w, zzonB.w)); // n
+    // Normalize and dering.
+    vec3 pix = min(max4, max(min4, aC * vec3(1.0 / aW)));
+    outColor = vec4(pix, 1.0);
+  }`;
+
+  // RCAS: Robust Contrast Adaptive Sharpening (5-tap, limited to avoid ringing).
+  const rcasFragment = `#version 300 es
+  precision highp float; precision highp int; precision highp sampler2D;
+  uniform sampler2D uTex;   // EASU output (display resolution)
+  uniform float uSharp;     // linear sharpness = exp2(-stops), as FsrRcasCon()
+  out vec4 outColor;
+  const float FSR_RCAS_LIMIT = 0.25 - (1.0 / 16.0);
+
+  float ASat(float x) { return clamp(x, 0.0, 1.0); }
+  float APrxMedRcp(float a) { float b = uintBitsToFloat(0x7ef19fffu - floatBitsToUint(a)); return b * (-b * a + 2.0); }
+  float AMax3(float x, float y, float z) { return max(x, max(y, z)); }
+  float AMin3(float x, float y, float z) { return min(x, min(y, z)); }
+
+  void main() {
+    ivec2 sp = ivec2(gl_FragCoord.xy);
+    ivec2 mx = textureSize(uTex, 0) - 1;
+    // Algorithm uses minimal 3x3 pixel neighborhood.   b / d e f / h
+    vec3 b = texelFetch(uTex, clamp(sp + ivec2( 0, -1), ivec2(0), mx), 0).rgb;
+    vec3 d = texelFetch(uTex, clamp(sp + ivec2(-1,  0), ivec2(0), mx), 0).rgb;
+    vec3 e = texelFetch(uTex, clamp(sp,                 ivec2(0), mx), 0).rgb;
+    vec3 f = texelFetch(uTex, clamp(sp + ivec2( 1,  0), ivec2(0), mx), 0).rgb;
+    vec3 h = texelFetch(uTex, clamp(sp + ivec2( 0,  1), ivec2(0), mx), 0).rgb;
+    float bR = b.r, bG = b.g, bB = b.b;
+    float dR = d.r, dG = d.g, dB = d.b;
+    float eR = e.r, eG = e.g, eB = e.b;
+    float fR = f.r, fG = f.g, fB = f.b;
+    float hR = h.r, hG = h.g, hB = h.b;
+    // Min and max of ring.
+    float mn4R = min(AMin3(bR, dR, fR), hR);
+    float mn4G = min(AMin3(bG, dG, fG), hG);
+    float mn4B = min(AMin3(bB, dB, fB), hB);
+    float mx4R = max(AMax3(bR, dR, fR), hR);
+    float mx4G = max(AMax3(bG, dG, fG), hG);
+    float mx4B = max(AMax3(bB, dB, fB), hB);
+    // Immediate constants for peak range.
+    vec2 peakC = vec2(1.0, -1.0 * 4.0);
+    // Limiters, these need to be high precision RCPs.
+    float hitMinR = min(mn4R, eR) * (1.0 / (4.0 * mx4R));
+    float hitMinG = min(mn4G, eG) * (1.0 / (4.0 * mx4G));
+    float hitMinB = min(mn4B, eB) * (1.0 / (4.0 * mx4B));
+    float hitMaxR = (peakC.x - max(mx4R, eR)) * (1.0 / (4.0 * mn4R + peakC.y));
+    float hitMaxG = (peakC.x - max(mx4G, eG)) * (1.0 / (4.0 * mn4G + peakC.y));
+    float hitMaxB = (peakC.x - max(mx4B, eB)) * (1.0 / (4.0 * mn4B + peakC.y));
+    float lobeR = max(-hitMinR, hitMaxR);
+    float lobeG = max(-hitMinG, hitMaxG);
+    float lobeB = max(-hitMinB, hitMaxB);
+    float lobe = max(-FSR_RCAS_LIMIT, min(AMax3(lobeR, lobeG, lobeB), 0.0)) * uSharp;
+    // Resolve, which needs the medium precision rcp approximation to avoid visible tonality changes.
+    float rcpL = APrxMedRcp(4.0 * lobe + 1.0);
+    vec3 pix = vec3((lobe * bR + lobe * dR + lobe * hR + lobe * fR + eR) * rcpL,
+                    (lobe * bG + lobe * dG + lobe * hG + lobe * fG + eG) * rcpL,
+                    (lobe * bB + lobe * dB + lobe * hB + lobe * fB + eB) * rcpL);
+    outColor = vec4(pix, 1.0);
+  }`;
+
+  // FsrEasuCon(): constants for an input image that fills its texture (viewport == size).
+  function easuConstants(inW, inH, outW, outH) {
+    return {
+      con0: [inW / outW, inH / outH, 0.5 * inW / outW - 0.5, 0.5 * inH / outH - 0.5],
+      con1: [1 / inW, 1 / inH, 1 / inW, -1 / inH],
+      con2: [-1 / inW, 2 / inH, 1 / inW, 2 / inH],
+      con3: [0, 4 / inH, 0, 0]
+    };
+  }
+  // FsrRcasCon(): sharpness in stops (0 = maximum, each +1 halves it) -> linear scale.
+  const rcasLinear = (stops) => Math.pow(2, -stops);
+
+  window.XelqoraFSR1 = { version: '1.0', vertex, bilinearFragment, easuFragment, rcasFragment, easuConstants, rcasLinear };
+})();
+
+</script>
+<script>
+/* Xelqora Website 2.0 — interactive browser demonstrations.
+   Rendering and physics are independent JS experiments, NOT the native C++ engine. */
+'use strict';
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const pages = ['home', 'playground', 'technology', 'roadmap', 'downloads', 'about'];
+  let currentPage = 'home', currentLab = 'graphics';
+  const app = { graphic: null, physics: null };
+  const REDUCED_MOTION = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const validPage = () => pages.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+  function route() {
+    currentPage = validPage();
+    document.querySelectorAll('[data-page]').forEach((p) => {
+      const active = p.dataset.page === currentPage;
+      p.hidden = !active; p.classList.toggle('is-active', active);
+    });
+    document.querySelectorAll('.nav-link').forEach((p) => {
+      const active = p.dataset.tabLink === currentPage;
+      p.classList.toggle('active',active); if (active) p.setAttribute('aria-current','page'); else p.removeAttribute('aria-current');
+    });
+    document.querySelector('.nav-links')?.classList.remove('open');
+    $('menu-toggle')?.setAttribute('aria-expanded','false');
+    document.title = (currentPage === 'home' ? 'Xelqora Engine' : currentPage === 'about' ? 'Community — Xelqora Engine' : currentPage[0].toUpperCase() + currentPage.slice(1) + ' — Xelqora Engine') + ' | Community Project';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (currentPage === 'playground') activateLab(currentLab);
+  }
+  function activateLab(name) {
+    if (!['graphics','physics','diagnostics'].includes(name)) return;
+    currentLab = name;
+    document.querySelectorAll('[data-lab-panel]').forEach(p => { const active = p.dataset.labPanel === name; p.hidden = !active; p.classList.toggle('is-active',active); });
+    document.querySelectorAll('[data-lab]').forEach(b => { const active = b.dataset.lab === name; b.classList.toggle('active',active); b.setAttribute('aria-selected',String(active)); });
+    if (currentPage !== 'playground') return;
+    if (name === 'graphics') { if (!app.graphic) app.graphic = new GraphicsLab(); else app.graphic.resize(); }
+    if (name === 'physics') { if (!app.physics) app.physics = new PhysicsLab(); else app.physics.resize(); }
+  }
+  $('menu-toggle')?.addEventListener('click', () => { const nav = document.querySelector('.nav-links'); const state = nav?.classList.toggle('open'); $('menu-toggle').setAttribute('aria-expanded', String(!!state)); });
+  document.querySelectorAll('[data-lab]').forEach(b => b.addEventListener('click', () => activateLab(b.dataset.lab)));
+  document.querySelectorAll('[data-tab-link]').forEach(a => a.addEventListener('click', () => {
+    if (location.hash === a.getAttribute('href')) route();
+  }));
+  window.addEventListener('hashchange', route);
+
+  const vertexShader = `#version 300 es
+  precision highp float;
+  void main() { vec2 pos = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2); gl_Position = vec4(pos * 2.0 - 1.0, 0.0, 1.0); }`;
+  const fragmentShader = `#version 300 es
+  precision highp float; precision highp int;
+  uniform vec2 uResolution; uniform float uTime, uSplit; uniform int uScene; uniform vec2 uOrbit;
+  out vec4 outColor;
+  const float FAR = 32.0;
+  mat2 rot(float a){ float s=sin(a),c=cos(a);return mat2(c,-s,s,c);}
+  float sdBox(vec3 p,vec3 b){vec3 q=abs(p)-b;return length(max(q,0.0))+min(max(q.x,max(q.y,q.z)),0.0);}
+  vec2 mapScene(vec3 p){
+    float floorD=p.y+0.02;
+    float ball=length(p-vec3(-0.88,0.96,0.1))-0.91;
+    vec3 q=p-vec3(1.05,0.86,0.0); q.xz=rot(0.30+uTime*.10)*q.xz; q.xy=rot(.14)*q.xy;
+    float block=sdBox(q,vec3(.68,.67,.68))-.10;
+    float little=length(p-vec3(.32,.30,-1.65))-.30;
+    vec2 d=vec2(floorD,1.0);
+    if(ball<d.x) d=vec2(ball,2.0);
+    if(block<d.x) d=vec2(block,3.0);
+    if(little<d.x) d=vec2(little,4.0);
+    return d;
+  }
+  vec2 trace(vec3 ro,vec3 rd,float maxT){float t=.005;float id=-1.;for(int i=0;i<86;i++){vec2 h=mapScene(ro+rd*t);if(h.x<.0015)return vec2(t,h.y);t+=max(h.x*.80,.005);if(t>maxT)break;}return vec2(-1.0,-1.0);}
+  vec3 normalAt(vec3 p){vec2 e=vec2(.0017,0.);return normalize(vec3(mapScene(p+e.xyy).x-mapScene(p-e.xyy).x,mapScene(p+e.yxy).x-mapScene(p-e.yxy).x,mapScene(p+e.yyx).x-mapScene(p-e.yyx).x));}
+  vec3 material(float id){
+    if(id<1.5) return uScene==1?vec3(.08,.18,.30):vec3(.18,.24,.29);
+    if(id<2.5) return uScene==1?vec3(.18,.79,.93):uScene==2?vec3(.70,.75,.78):vec3(.65,.89,.85);
+    if(id<3.5) return uScene==1?vec3(.83,.26,.61):uScene==2?vec3(.32,.60,.92):vec3(.28,.54,.80);
+    return vec3(.98,.77,.40);
+  }
+  vec3 environment(vec3 rd){float t=max(rd.y,0.);vec3 sky=mix(vec3(.035,.06,.095),vec3(.12,.26,.33),t);
+    if(uScene==1)sky=mix(vec3(.025,.02,.09),vec3(.09,.19,.35),t);
+    if(uScene==2)sky=mix(vec3(.06,.08,.12),vec3(.25,.31,.34),t);
+    float glow=pow(max(dot(rd,normalize(vec3(-.42,.75,.5))),0.),24.);return sky+vec3(.35,.62,.55)*glow;
+  }
+  float shadowRay(vec3 ro,vec3 rd,float maxt){float shade=1.;float t=.025;for(int i=0;i<28;i++){float h=mapScene(ro+rd*t).x;if(h<.004)return .12;shade=min(shade,9.*h/max(t,.01));t+=clamp(h,.02,.35);if(t>maxt)break;}return clamp(shade,.18,1.);}
+  vec3 surfaceColor(vec3 p,float id){vec3 base=material(id);if(id<1.5){float gridX=1.-smoothstep(0.,.05,abs(fract(p.x*.75)-.5));float gridZ=1.-smoothstep(0.,.05,abs(fract(p.z*.75)-.5));float grid=max(gridX,gridZ);base+=grid*vec3(.025,.15,.14);}
+    return base;
+  }
+  vec3 shade(vec3 ro,vec3 rd,vec2 hit,bool enhanced){
+    if(hit.x<0.)return environment(rd);
+    vec3 p=ro+rd*hit.x,n=normalAt(p),base=surfaceColor(p,hit.y);
+    vec3 lightPos=vec3(-3.5,6.0,4.5),ld=normalize(lightPos-p),viewD=normalize(ro-p);
+    float diff=max(dot(n,ld),0.0);float sh=enhanced?shadowRay(p+n*.015,ld,length(lightPos-p)) : 1.;
+    float spec=pow(max(dot(reflect(-ld,n),viewD),0.0),hit.y>1.5?70.0:20.0);
+    vec3 color=base*(vec3(.14,.24,.27)+vec3(1.1,1.03,.96)*diff*sh);
+    color+=vec3(1.1,1.0,.87)*spec*(enhanced?.62:.20)*sh;
+    color+=base*max(n.y,0.)*.10;
+    if(enhanced && hit.y>1.5 && hit.y<3.8){
+      vec3 rd2=reflect(rd,n),rr=p+n*.02;vec2 bounce=trace(rr,rd2,12.0);
+      vec3 reflected=bounce.x<0.?environment(rd2):surfaceColor(rr+rd2*bounce.x,bounce.y)*(.28+.35*max(dot(normalAt(rr+rd2*bounce.x),normalize(lightPos-(rr+rd2*bounce.x))),0.));
+      float fres=pow(1.-clamp(dot(-rd,n),0.,1.),5.);
+      float strength=(hit.y<2.5?.24:.16)+fres*.43;
+      color=mix(color,reflected,strength);
+    }
+    float fog=1.-exp(-.007*hit.x*hit.x);return mix(color,environment(rd),fog);
+  }
+  void main(){vec2 uv=(gl_FragCoord.xy-.5*uResolution)/uResolution.y;
+    vec3 target=vec3(0.,.80,0.);float yaw=uOrbit.x,pitch=uOrbit.y;
+    vec3 ro=target+vec3(sin(yaw)*cos(pitch),sin(pitch),cos(yaw)*cos(pitch))*5.8;
+    vec3 fw=normalize(target-ro),right=normalize(cross(fw,vec3(0.,1.,0.))),up=cross(right,fw);
+    vec3 rd=normalize(fw*1.85+right*uv.x*2.+up*uv.y*2.);
+    vec2 hit=trace(ro,rd,FAR);bool enhanced=(gl_FragCoord.x/uResolution.x)<uSplit;
+    vec3 color=shade(ro,rd,hit,enhanced);
+    color=1.-exp(-color*1.22);color=pow(max(color,vec3(0.)),vec3(.87));
+    float vignette=1.-.22*dot(uv,uv);color*=clamp(vignette,.72,1.0);
+    outColor=vec4(color,1.);
+  }`;
+  // Presentation pass for the "no upscaler" baseline: plain bilinear sampling of the low-resolution frame.
+  const blitShader = `#version 300 es
+  precision highp float; precision highp sampler2D;
+  uniform sampler2D uTex; uniform vec2 uOutSize; out vec4 outColor;
+  void main(){ outColor = vec4(texture(uTex, gl_FragCoord.xy / uOutSize).rgb, 1.0); }`;
+  // FSR 1.0 EASU/RCAS live in assets/fsr1-webgl2.js (AMD FidelityFX-FSR, MIT; see THIRD_PARTY_NOTICES.txt).
+  const sharpnessStops = (slider) => (100 - slider) / 50; // slider 100 = sharpest (0 stops), 0 = 2 stops softer
+  class GraphicsLab {
+    constructor(){
+      this.canvas=$('render-canvas'); this.viewport=$('render-viewport'); this.label=$('render-loading');
+      this.ctx=null; this.running=!REDUCED_MOTION; this.orbit=[0.12,0.27]; this.dragging=false; this.last=0;
+      this.frames=0; this.fpsAt=performance.now(); this.time=0; this.dirty=true; this.sizeDirty=true; this.targets=null; this.fbo=null;
+      this.quality=Number($('quality-select').value); this.split=Number($('comparison').value)/100; this.scene=Number($('scene-select').value);
+      this.upscaler=$('upscaler-select').value; this.sharpness=Number($('sharpness').value); this.fsrReady=false; this.fsrError='';
+      this.init(); this.wire();
+      if('ResizeObserver' in window) new ResizeObserver(()=>{this.sizeDirty=true;}).observe(this.viewport);
+      else window.addEventListener('resize',()=>{this.sizeDirty=true;},{passive:true});
+      requestAnimationFrame(t=>this.frame(t));
+    }
+    init(){
+      try{
+        const gl=this.canvas.getContext('webgl2',{alpha:false,antialias:false,depth:false,preserveDrawingBuffer:false,powerPreference:'high-performance'});
+        if(!gl)throw new Error('WebGL2 unavailable in this browser.');
+        const link=(fragmentSource)=>{
+          const compile=(type,source)=>{const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader)||'Shader compile failed');return shader;};
+          const vs=compile(gl.VERTEX_SHADER,vertexShader),fs=compile(gl.FRAGMENT_SHADER,fragmentSource),program=gl.createProgram();
+          gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);
+          if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program)||'Program link failed');
+          gl.deleteShader(vs);gl.deleteShader(fs);return program;
+        };
+        const locate=(program,names)=>{const u={};for(const n of names)u[n]=gl.getUniformLocation(program,n);return {program,u};};
+        this.scenePass=locate(link(fragmentShader),['uResolution','uTime','uSplit','uScene','uOrbit']);
+        this.blitPass=locate(link(blitShader),['uTex','uOutSize']);
+        // FSR is optional: if its shaders are missing or fail to compile, the lab keeps working with bilinear.
+        this.fsrReady=false;this.fsrError='';
+        try{
+          const F=window.XelqoraFSR1;if(!F)throw new Error('assets/fsr1-webgl2.js did not load');
+          this.easuPass=locate(link(F.easuFragment),['uTex','uCon0','uCon1','uCon2','uCon3']);
+          this.rcasPass=locate(link(F.rcasFragment),['uTex','uSharp']);
+          this.fsrReady=true;
+        }catch(e){this.fsrError=e.message;}
+        const option=$('upscaler-select').querySelector('option[value="fsr"]');
+        if(option)option.disabled=!this.fsrReady;
+        if(!this.fsrReady){this.upscaler='bilinear';$('upscaler-select').value='bilinear';}
+        this.syncSharpnessControl();
+        this.ctx=gl;this.targets=null;this.fbo=gl.createFramebuffer();
+        this.sizeDirty=true;this.dirty=true;this.label.hidden=true;
+      }catch(e){
+        this.ctx=null;
+        this.label.hidden=false;this.label.textContent=`GPU demo unavailable: ${e.message}`;
+        $('render-fps').textContent='UNAVAILABLE';$('render-resolution').textContent='GPU LAB / UNAVAILABLE';
+      }
+    }
+    wire(){
+      $('comparison').addEventListener('input',(e)=>{this.split=Number(e.target.value)/100;this.setSplit();this.dirty=true;});this.setSplit();
+      $('scene-select').addEventListener('change',e=>{this.scene=Number(e.target.value);this.dirty=true;});
+      $('quality-select').addEventListener('change',e=>{this.quality=Number(e.target.value);this.sizeDirty=true;});
+      $('upscaler-select').addEventListener('change',e=>{this.upscaler=e.target.value;this.syncSharpnessControl();this.updateReadout();this.dirty=true;});
+      $('sharpness').addEventListener('input',e=>{this.sharpness=Number(e.target.value);this.syncSharpnessControl();this.dirty=true;});
+      $('render-pause').addEventListener('click',()=>{this.running=!this.running;this.last=0;this.syncPauseButton();});this.syncPauseButton();
+      $('render-reset').addEventListener('click',()=>{this.orbit=[.12,.27];this.time=0;this.dirty=true;});
+      this.viewport.addEventListener('pointerdown',e=>{if(e.target!==this.canvas)return;this.dragging=true;this.lastX=e.clientX;this.lastY=e.clientY;this.viewport.setPointerCapture(e.pointerId);});
+      this.viewport.addEventListener('pointermove',e=>{if(!this.dragging)return;this.orbit[0]+=(e.clientX-this.lastX)*.007;this.orbit[1]=Math.max(-.12,Math.min(1.,this.orbit[1]+(e.clientY-this.lastY)*.005));this.lastX=e.clientX;this.lastY=e.clientY;this.dirty=true;});
+      this.viewport.addEventListener('pointerup',()=>{this.dragging=false;});this.viewport.addEventListener('pointercancel',()=>{this.dragging=false;});
+      this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.ctx=null;this.targets=null;this.fbo=null;this.label.hidden=false;this.label.textContent='GPU context lost. Attempting to recover…';});
+      this.canvas.addEventListener('webglcontextrestored',()=>{this.init();});
+    }
+    syncPauseButton(){$('render-pause').textContent=this.running?'Pause':'Resume';}
+    syncSharpnessControl(){
+      const fsr=this.upscaler==='fsr',slider=$('sharpness');
+      slider.disabled=!fsr;slider.closest('.control')?.classList.toggle('is-disabled',!fsr);
+      $('sharpness-value').textContent=fsr?`${sharpnessStops(this.sharpness).toFixed(2)} stops`:'OFF';
+    }
+    setSplit(){const val=Math.round(this.split*100);$('comparison-value').textContent=`${val} / ${100-val}`;$('render-centerline').style.left=`${val}%`;}
+    updateReadout(){
+      const t=this.targets;if(!t)return;
+      const size=(t.wi===t.wo&&t.hi===t.ho)?`${t.wo} × ${t.ho} NATIVE`:`${t.wi} × ${t.hi} → ${t.wo} × ${t.ho}`;
+      const mode=this.upscaler==='fsr'?'AMD FSR 1.0':(this.fsrReady?'BILINEAR':`BILINEAR (FSR UNAVAILABLE)`);
+      $('render-resolution').textContent=`WEBGL2 / ${size} / ${mode}`;
+    }
+    allocate(wi,hi,wo,ho){
+      const gl=this.ctx;
+      if(this.targets){gl.deleteTexture(this.targets.low);gl.deleteTexture(this.targets.mid);}
+      const make=(w,h)=>{const tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);gl.texStorage2D(gl.TEXTURE_2D,1,gl.RGBA8,w,h);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);return tex;};
+      this.targets={wi,hi,wo,ho,low:make(wi,hi),mid:make(wo,ho)};
+      gl.bindTexture(gl.TEXTURE_2D,null);
+      this.easuCon=this.fsrReady?window.XelqoraFSR1.easuConstants(wi,hi,wo,ho):null;
+    }
+    // Display size follows the viewport; the scene is rendered at `quality` x that size, then upscaled.
+    resize(){
+      if(!this.ctx)return;const rect=this.viewport.getBoundingClientRect();if(!rect.width||!rect.height)return;
+      const dpr=Math.min(window.devicePixelRatio||1,1.8);
+      const wo=Math.max(2,Math.min(1400,Math.round(rect.width*dpr))),ho=Math.max(2,Math.min(900,Math.round(rect.height*dpr)));
+      const wi=Math.max(2,Math.round(wo*this.quality)),hi=Math.max(2,Math.round(ho*this.quality));
+      if(this.canvas.width!==wo||this.canvas.height!==ho){this.canvas.width=wo;this.canvas.height=ho;}
+      const t=this.targets;if(!t||t.wi!==wi||t.hi!==hi||t.wo!==wo||t.ho!==ho)this.allocate(wi,hi,wo,ho);
+      this.sizeDirty=false;this.dirty=true;this.updateReadout();
+    }
+    draw(){
+      const gl=this.ctx,t=this.targets;if(!gl||!t)return;
+      const fullscreen=()=>gl.drawArrays(gl.TRIANGLES,0,3);
+      gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,null);
+      // 1) Scene at the internal (low) resolution.
+      gl.bindFramebuffer(gl.FRAMEBUFFER,this.fbo);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,t.low,0);
+      gl.viewport(0,0,t.wi,t.hi);
+      const s=this.scenePass;gl.useProgram(s.program);gl.uniform2f(s.u.uResolution,t.wi,t.hi);gl.uniform1f(s.u.uTime,this.time);gl.uniform1f(s.u.uSplit,this.split);gl.uniform1i(s.u.uScene,this.scene);gl.uniform2f(s.u.uOrbit,...this.orbit);
+      fullscreen();
+      // 2) Upscale to the display resolution.
+      if(this.upscaler==='fsr'&&this.fsrReady){
+        const e=this.easuPass,c=this.easuCon;
+        gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,t.mid,0);gl.viewport(0,0,t.wo,t.ho);
+        gl.useProgram(e.program);gl.bindTexture(gl.TEXTURE_2D,t.low);gl.uniform1i(e.u.uTex,0);
+        gl.uniform4fv(e.u.uCon0,c.con0);gl.uniform4fv(e.u.uCon1,c.con1);gl.uniform4fv(e.u.uCon2,c.con2);gl.uniform4fv(e.u.uCon3,c.con3);
+        fullscreen();
+        const r=this.rcasPass;
+        gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,t.wo,t.ho);
+        gl.useProgram(r.program);gl.bindTexture(gl.TEXTURE_2D,t.mid);gl.uniform1i(r.u.uTex,0);gl.uniform1f(r.u.uSharp,window.XelqoraFSR1.rcasLinear(sharpnessStops(this.sharpness)));
+        fullscreen();
+      }else{
+        const b=this.blitPass;
+        gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,t.wo,t.ho);
+        gl.useProgram(b.program);gl.bindTexture(gl.TEXTURE_2D,t.low);gl.uniform1i(b.u.uTex,0);gl.uniform2f(b.u.uOutSize,t.wo,t.ho);
+        fullscreen();
+      }
+      gl.bindTexture(gl.TEXTURE_2D,null);
+    }
+    frame(now){
+      requestAnimationFrame(t=>this.frame(t));
+      if(!this.ctx)return;
+      if(currentPage!=='playground'||currentLab!=='graphics'){this.last=now;return;}
+      if(this.sizeDirty)this.resize();
+      if(!this.running&&!this.dirty){this.last=now;return;} // paused: only redraw when a control changed
+      if(this.running){const dt=this.last?Math.min(.05,(now-this.last)/1000):.016;this.time+=dt;}
+      this.last=now;this.dirty=false;this.draw();
+      if(this.running&&++this.frames>=24){const elapsed=(now-this.fpsAt)/1000;if(elapsed>.2)$('render-fps').textContent=`${Math.round(this.frames/elapsed)} FPS`;this.frames=0;this.fpsAt=now;}
+    }
+  }
+  class PhysicsLab {
+    constructor(){this.canvas=$('physics-canvas');this.parent=this.canvas.parentElement;this.ctx=this.canvas.getContext('2d');this.balls=[];this.width=0;this.height=0;this.grav=720;this.elastic=.8;this.acc=0;this.last=0;this.dragged=null;this.lastPointer=null;this.pointerVelocity={x:0,y:0};this.fpsAt=performance.now();this.frames=0;this.resize();this.seed();this.bind();window.addEventListener('resize',()=>this.resize());requestAnimationFrame(t=>this.frame(t));}
+    resize(){const b=this.parent.getBoundingClientRect();if(!b.width||!b.height)return;this.width=b.width;this.height=b.height;const ratio=Math.min(devicePixelRatio||1,2);this.canvas.width=Math.round(this.width*ratio);this.canvas.height=Math.round(this.height*ratio);this.ctx.setTransform(ratio,0,0,ratio,0,0);for(const p of this.balls){p.x=Math.max(p.r,Math.min(this.width-p.r,p.x));p.y=Math.max(p.r,Math.min(this.height-p.r,p.y));}}
+    seed(){this.balls=[];const w=this.width,h=this.height;[[.28,.18,23,0],[.52,.22,34,1],[.70,.15,18,2],[.47,.50,24,3]].forEach(([x,y,r,i])=>this.add(w*x,h*y,r,i));}
+    add(x,y,r=14+Math.random()*18,i=-1){if(this.balls.length>=55)this.balls.shift();this.balls.push({x,y,px:x,py:y,r,vx:(Math.random()-.5)*150,vy:0,index:i<0?this.balls.length%4:i});$('physics-count').textContent=`${this.balls.length} OBJECT${this.balls.length===1?'':'S'}`;}
+    bind(){
+      $('gravity').addEventListener('input',e=>{this.grav=Number(e.target.value);$('gravity-value').textContent=this.grav;});
+      $('bounce').addEventListener('input',e=>{this.elastic=Number(e.target.value)/100;$('bounce-value').textContent=this.elastic.toFixed(2);});
+      $('physics-add').addEventListener('click',()=>this.add(this.width*(.2+Math.random()*.6),Math.max(30,this.height*.18)));
+      $('physics-clear').addEventListener('click',()=>this.seed());
+      const coords=e=>{const rect=this.canvas.getBoundingClientRect();return{x:e.clientX-rect.left,y:e.clientY-rect.top};};
+      this.canvas.addEventListener('pointerdown',e=>{let p=coords(e);this.dragged=this.balls.slice().reverse().find(b=>Math.hypot(p.x-b.x,p.y-b.y)<=b.r+10);if(!this.dragged){this.add(p.x,p.y);this.dragged=this.balls[this.balls.length-1];}this.lastPointer={...p,time:performance.now()};this.pointerVelocity={x:0,y:0};this.canvas.setPointerCapture(e.pointerId);});
+      this.canvas.addEventListener('pointermove',e=>{if(!this.dragged)return;let p=coords(e),now=performance.now();let d=Math.max(8,now-this.lastPointer.time);this.pointerVelocity={x:(p.x-this.lastPointer.x)*1000/d,y:(p.y-this.lastPointer.y)*1000/d};this.dragged.x=Math.max(this.dragged.r,Math.min(this.width-this.dragged.r,p.x));this.dragged.y=Math.max(this.dragged.r,Math.min(this.height-this.dragged.r,p.y));this.lastPointer={...p,time:now};});
+      const end=()=>{if(this.dragged){this.dragged.vx=Math.max(-1000,Math.min(1000,this.pointerVelocity.x));this.dragged.vy=Math.max(-1000,Math.min(1000,this.pointerVelocity.y));}this.dragged=null;};
+      this.canvas.addEventListener('pointerup',end);this.canvas.addEventListener('pointercancel',end);
+    }
+    simulate(dt){for(const a of this.balls){if(a===this.dragged)continue;a.vy+=this.grav*dt;a.vx*=.999;a.vy*=.999;a.x+=a.vx*dt;a.y+=a.vy*dt;
+      if(a.x<a.r){a.x=a.r;a.vx=Math.abs(a.vx)*this.elastic;}if(a.x>this.width-a.r){a.x=this.width-a.r;a.vx=-Math.abs(a.vx)*this.elastic;}
+      if(a.y>this.height-a.r){a.y=this.height-a.r;a.vy=-Math.abs(a.vy)*this.elastic;if(Math.abs(a.vy)<8)a.vy=0;a.vx*=.98;}if(a.y<a.r){a.y=a.r;a.vy=Math.abs(a.vy)*this.elastic;}
+    }
+    for(let i=0;i<this.balls.length;i++)for(let j=i+1;j<this.balls.length;j++){
+      const a=this.balls[i],b=this.balls[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy),minDist=a.r+b.r;
+      if(d>=minDist)continue;if(d<.00001){dx=1;dy=0;d=1;}let nx=dx/d,ny=dy/d,overlap=minDist-d;
+      const ma=a===this.dragged?0:1,mb=b===this.dragged?0:1,total=ma+mb;if(total===0)continue;
+      a.x-=nx*overlap*ma/total;a.y-=ny*overlap*ma/total;b.x+=nx*overlap*mb/total;b.y+=ny*overlap*mb/total;
+      let rel=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;if(rel<0){let impulse=-(1+this.elastic)*rel/total;a.vx-=nx*impulse*ma;a.vy-=ny*impulse*ma;b.vx+=nx*impulse*mb;b.vy+=ny*impulse*mb;}
+    }}
+    draw(){let c=this.ctx,w=this.width,h=this.height;c.clearRect(0,0,w,h);let grad=c.createLinearGradient(0,0,w,h);grad.addColorStop(0,'#0a1b28');grad.addColorStop(1,'#0b111a');c.fillStyle=grad;c.fillRect(0,0,w,h);
+      c.strokeStyle='#30576640';c.lineWidth=1;for(let x=0;x<w;x+=34){c.beginPath();c.moveTo(x,0);c.lineTo(x,h);c.stroke();}for(let y=0;y<h;y+=34){c.beginPath();c.moveTo(0,y);c.lineTo(w,y);c.stroke();}
+      c.fillStyle='#80efc030';c.fillRect(0,h-8,w,8);
+      const colors=[['#95ffda','#2c8a87'],['#7accfc','#28528b'],['#e0b8ff','#7355a7'],['#ffde98','#a66d36']];
+      for(const b of this.balls){const cc=colors[b.index%4];c.save();c.shadowColor=cc[0];c.shadowBlur=15;const grad=c.createRadialGradient(b.x-b.r*.25,b.y-b.r*.3,1,b.x,b.y,b.r);grad.addColorStop(0,'#f6fffe');grad.addColorStop(.24,cc[0]);grad.addColorStop(1,cc[1]);c.fillStyle=grad;c.beginPath();c.arc(b.x,b.y,b.r,0,Math.PI*2);c.fill();c.restore();}
+    }
+    frame(now){requestAnimationFrame(t=>this.frame(t));if(currentPage!=='playground'||currentLab!=='physics'){this.last=now;return;}if(!this.width||!this.height)this.resize();const dt=this.last?Math.min(.06,(now-this.last)/1000):0;this.last=now;this.acc=Math.min(.12,this.acc+dt);let steps=0;while(this.acc>=1/120&&steps<10){this.simulate(1/120);this.acc-=1/120;steps++;}if(steps===10)this.acc=0;this.draw();if(++this.frames>=30){const sec=(now-this.fpsAt)/1000;if(sec>.1)$('physics-fps').textContent=`${Math.round(this.frames/sec)} FPS`;this.frames=0;this.fpsAt=now;}}
+  }
+  $('diag-run')?.addEventListener('click',async()=>{
+    $('diag-run').disabled=true;$('diag-run').textContent='Running checks…';$('diag-results').replaceChildren();
+    const addRow=(label,val,warning=false)=>{const row=document.createElement('div');row.className='diag-row';const left=document.createElement('span');left.textContent=label;const right=document.createElement('b');right.textContent=val;if(warning)right.className='warn';row.append(left,right);$('diag-results').append(row);};
+    const test = document.createElement('canvas');const gl=test.getContext('webgl2');addRow('WebGL2 GPU support',gl?'SUPPORTED':'UNAVAILABLE',!gl);
+    addRow('WebAssembly runtime',typeof WebAssembly==='object'?'SUPPORTED':'UNAVAILABLE',typeof WebAssembly!=='object');
+    addRow('2D Canvas API',document.createElement('canvas').getContext('2d')?'SUPPORTED':'UNAVAILABLE',false);
+    addRow('Web Audio API',typeof (window.AudioContext||window.webkitAudioContext)==='function'?'SUPPORTED':'UNAVAILABLE');
+    let ticks=0,acc=0;for(let i=0;i<60;i++){acc+=1/60;while(acc+1e-10>=1/120){acc-=1/120;ticks++;}}
+    addRow('Fixed timestep check',ticks===120?'PASS / 120 TICKS':`FAIL / ${ticks} TICKS`,ticks!==120);
+    addRow('Pixel density',`${Math.round((window.devicePixelRatio||1)*100)/100}x`);
+    try{const {data:d,source}=await loadProject();addRow(source,'AVAILABLE');addRow('Project version',String(d.version||'Unknown'));}catch{addRow('Project manifest','NOT AVAILABLE',true);}
+    $('diag-time').textContent=new Date().toLocaleTimeString();$('diag-run').disabled=false;$('diag-run').textContent='Run checks again';
+  });
+  // Server-authoritative project status is only used when PHP is active.
+  // Works on PHP hosting (api/status.php) and on static hosts such as GitHub Pages (data/project.json).
+  async function loadProject(){
+    const embedded = document.getElementById('xelqora-project-manifest');
+    if (!embedded) throw new Error('embedded project manifest missing');
+    return {data:JSON.parse(embedded.textContent),source:'Embedded project manifest'};
+  }
+  async function refreshProjectStatus(){try{const {data:d}=await loadProject();if(!Array.isArray(d.milestones))return;const board=$('roadmap-board');if(!board)return;board.replaceChildren();d.milestones.forEach((m,i)=>{const a=document.createElement('article');a.className='roadmap-row';const step=document.createElement('div');step.className='roadmap-step';step.textContent=String(i+1).padStart(2,'0');const body=document.createElement('div');const h=document.createElement('h3');h.textContent=m.title||'';const p=document.createElement('p');p.textContent=m.detail||'';body.append(h,p);const status=document.createElement('span');status.className='roadmap-state';status.textContent=String(m.state||'').toUpperCase();a.append(step,body,status);board.append(a);});}catch{/* preserve accessible static fallback */}}
+  refreshProjectStatus();
+  route(); // Initialise after class declarations (deep links like #playground work).
+})();
+
+</script>
+<script>
+document.getElementById("third-party-link")?.addEventListener("click", (e) => { e.preventDefault(); const n=document.getElementById("third-party-notices"); if(n){n.open=true;n.scrollIntoView({behavior:"smooth",block:"start"});} });
+</script>
 </body>
 </html>
